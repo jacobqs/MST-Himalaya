@@ -1,6 +1,5 @@
-[![DOI](https://zenodo.org/badge/472295880.svg)](https://zenodo.org/badge/latestdoi/472295880)
-
 # Master Thesis
+[![DOI](https://zenodo.org/badge/472295880.svg)](https://zenodo.org/badge/latestdoi/472295880)
 
 ## Subheader
 
