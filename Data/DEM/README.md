@@ -1,1 +1,1 @@
-# Digital Elevation Model data
+# Digital Elevation Model (DEM) 
