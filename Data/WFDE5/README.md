@@ -1,4 +1,4 @@
-# Downloading WFDE5 data
+# How to access and download the WFDE5 data
 
 1. Register an account at https://cds.climate.copernicus.eu/api-how-to
 2. Install the CDS API Key at https://cds.climate.copernicus.eu/api-how-to
