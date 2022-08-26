@@ -45,6 +45,6 @@ for variable in variables:
             ],
             'version': '2.1',
             'format': 'zip',
-            'area'          : [north, west, south, east],
+            'area': [north, west, south, east],
         },
         f'{variable}.zip')
