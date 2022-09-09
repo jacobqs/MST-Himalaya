@@ -6,23 +6,36 @@
 
 import cdsapi
 
-# Bundhi Gandaki catchment
-south = 27.8333
-north = 29.0000
-west = 84.5000
-east = 85.1667
+### Hindu Kush-Himalayan region extent 
+# (Bajracharya, SR; Shrestha, B (eds) (2011) The status of glaciers in the Hindu Kush-Himalayan region. Kathmandu: ICIMOD)
+
+north = 39.31
+west = 60.85
+south = 15.95
+east = 105.04
+
+#### Bundhi Gandaki catchment #####
+
+#south = 27.8333
+#north = 29.0000
+#west = 84.5000
+#east = 85.1667
 
 c = cdsapi.Client()
 
-variables = ['grid_point_altitude', 'near_surface_air_temperature', 'near_surface_specific_humidity', 
-            'near_surface_wind_speed', 'rainfall_flux', 'snowfall_flux', 'surface_air_pressure', 
-            'surface_downwelling_longwave_radiation',
+
+
+variables = ['near_surface_specific_humidity', 'grid_point_altitude', 
+            'near_surface_air_temperature', 'near_surface_specific_humidity', 
+            'near_surface_wind_speed', 'rainfall_flux', 'snowfall_flux', 
+            'surface_air_pressure', 
+           'surface_downwelling_longwave_radiation',
             'surface_downwelling_shortwave_radiation']
 
 for variable in variables:
     c.retrieve(
         'derived-near-surface-meteorological-variables',
-        {
+        {   'area': [north, west, south, east],
             'variable': f'{variable}',
             'reference_dataset': 'cru',
             'year': [
@@ -44,7 +57,8 @@ for variable in variables:
                 '10', '11', '12',
             ],
             'version': '2.1',
-            'format': 'zip',
-            'area': [north, west, south, east],
+            'format': 'tgz'
+            
         },
-        f'{variable}.zip')
+        f'{variable}.tgz')
+
