@@ -2,7 +2,9 @@
 
 ## Method 1: Use the data contained in the folder
 
-1. The WFDE5 data is already contained in the folder called WFDE5
+1. The forcing data (WFDE5) can be found at Zenodo:
+https://zenodo.org/record/6510027#.Y5sbIi8w1pQ
+
 
 ## Method 2: Downloading from the CDS API
 
