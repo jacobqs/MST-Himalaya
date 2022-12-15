@@ -1,11 +1,4 @@
 # Files or folders to ignore
 
-WFDE5/near_surface_specific_humidity
-WFDE5/near_surface_wind_speed
-WFDE5/rainfall_flux
-WFDE5/snowfall_flux
-WFDE5/surface_downwelling_longwave_radiation
-WFDE5/surface_shortwave_radiation
-
-HYDROSHED/
+Data/
 
