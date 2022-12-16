@@ -1,2 +1,0 @@
-near_surface_air_temperature/ filter=lfs diff=lfs merge=lfs -text
-near_surface_specific_humidity/ filter=lfs diff=lfs merge=lfs -text
