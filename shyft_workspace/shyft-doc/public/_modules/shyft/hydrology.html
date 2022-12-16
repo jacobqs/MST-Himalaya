@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shyft.hydrology &mdash; Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/bootstrap-grid.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/js/bootstrap.min.js"></script>
+        <script src="../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Shyft
+          </a>
+              <div class="version">
+                4.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/contact.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Time Series</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/time_series/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/time_series/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/time_series/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/time_series/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hydrology</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/hydrology/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/hydrology/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/hydrology/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/hydrology/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/dashboard/api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Shyft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>shyft.hydrology</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for shyft.hydrology</h1><div class="highlight"><pre>
+<span></span><span class="c1"># need to create the `__all__` attribute for documentation.</span>
+<span class="c1"># if you want sphinx-apidoc to autodoc a module/class it should be</span>
+<span class="c1"># included below.</span>
+<span class="c1"># generate using ipython: from `shyft.hydrology._api import *` and `dir()`, then clean</span>
+<span class="c1"># concatenate several lists from this file and from the list you create:</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+           <span class="s1">&#39;GeoCellDataServer&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoCellDataClient&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoCellDataModel&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;parse_cf_time&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;StrGeoCellData&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ABS_DIFF&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ARegionEnvironment&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActualEvapotranspirationCalculate_step&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActualEvapotranspirationParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActualEvapotranspirationResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;BTKParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CELL_CHARGE&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CatchmentPropertyType&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CellEnvironment&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CellStateId&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DISCHARGE&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;EXPONENTIAL&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;FlowAdjustResult&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GAUSSIAN&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GammaSnowCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GammaSnowParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GammaSnowResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GammaSnowState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoCellData&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoCellDataVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoPoint&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoPointSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoPointSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GeoPointVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;GlacierMeltParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvActualEvapotranspirationParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvActualEvapotranspirationResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvActualEvapotranspirationCalculate_step&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvPhysicalSnowCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvPhysicalSnowParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvPhysicalSnowResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvPhysicalSnowState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSnowCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSnowParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSnowResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSnowState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSoilCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSoilParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSoilResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvSoilState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvTankCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvTankParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvTankResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;HbvTankState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SnowTilesParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;IDWParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;IDWPrecipitationParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;IDWTemperatureParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;InterpolationParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KLING_GUPTA&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KalmanBiasPredictor&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KalmanFilter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KalmanParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KalmanState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KirchnerCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KirchnerParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KirchnerResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;KirchnerState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;LandTypeFractions&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;MethodStackParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;NASH_SUTCLIFFE&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;OKCovarianceType&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;OKParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PenmanMonteithCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PenmanMonteithParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PenmanMonteithResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PrecipitationCorrectionCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PrecipitationCorrectionParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PrecipitationSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PrecipitationSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PriestleyTaylorCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PriestleyTaylorParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PriestleyTaylorResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RMSE&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ROUTED_DISCHARGE&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RadiationCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RadiationParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RadiationResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RadiationSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RadiationSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RelHumSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RelHumSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;River&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RiverNetwork&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;RoutingInfo&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SNOW_COVERED_AREA&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SNOW_WATER_EQUIVALENT&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SkaugenCalculator&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SkaugenParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SkaugenResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SkaugenState&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TargetSpecCalcType&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TargetSpecificationPts&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TargetSpecificationVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TemperatureSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TemperatureSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;TsTransform&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;UHGParameter&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;WindSpeedSource&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;WindSpeedSourceVector&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;bayesian_kriging_temperature&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;catchment&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;cell&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;compute_geo_ts_values_at_time&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;create_precipitation_source_vector_from_np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;create_radiation_source_vector_from_np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;create_rel_hum_source_vector_from_np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;create_temperature_source_vector_from_np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;create_wind_speed_source_vector_from_np_array&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;glacier_melt_step&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;idw_precipitation&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;idw_radiation&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;idw_relative_humidity&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;idw_temperature&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;idw_wind_speed&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;make_uhg_from_gamma&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ordinary_kriging&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;stat_scope&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;version&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;pt_gs_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;pt_hps_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;pt_hs_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;pt_st_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;pt_ss_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;hbv_stack&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;r_pm_gs_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;r_pt_gs_k&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CalibrationOption&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;OptimizerMethod&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;CalibrationStatus&#39;</span><span class="p">,</span>
+           <span class="c1"># added</span>
+           <span class="s1">&#39;DrmClient&#39;</span><span class="p">,</span> <span class="s1">&#39;DrmServer&#39;</span><span class="p">,</span> <span class="s1">&#39;RegionModelType&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;SnowTilesParameter&#39;</span><span class="p">,</span> <span class="s1">&#39;SnowTilesState&#39;</span><span class="p">,</span> <span class="s1">&#39;SnowTilesCalculator&#39;</span><span class="p">,</span> <span class="s1">&#39;SnowTilesResponse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;shyftdata_dir&#39;</span><span class="p">,</span> <span class="s1">&#39;percentiles&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;viz&#39;</span><span class="p">,</span> <span class="s1">&#39;repository&#39;</span><span class="p">,</span> <span class="s1">&#39;orchestration&#39;</span>
+
+           <span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="c1"># we need timeseries, start with it early</span>
+<span class="kn">from</span> <span class="nn">..time_series</span> <span class="kn">import</span> <span class="p">(</span><span class="n">IntVector</span><span class="p">,</span> <span class="n">DoubleVector</span><span class="p">,</span> <span class="n">TsVector</span><span class="p">,</span> <span class="n">GeoPoint</span><span class="p">,</span> <span class="n">GeoPointVector</span><span class="p">,</span> <span class="n">TimeAxis</span><span class="p">)</span>
+
+<span class="c1"># this is backward compatible</span>
+
+<span class="kn">from</span> <span class="nn">._api</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">r_pm_gs_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">r_pt_gs_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pt_gs_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pt_hps_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pt_hs_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pt_st_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pt_ss_k</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">hbv_stack</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">viz</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">repository</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">orchestration</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">if</span> <span class="s2">&quot;SHYFT_DATA&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+    <span class="n">shyftdata_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SHYFT_DATA&quot;</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># If SHYFT_DATA environment variable is not here, then use a decent guess</span>
+    <span class="n">shyftdata_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s2">&quot;shyft-data&quot;</span><span class="p">)</span>
+<span class="n">shyftdata_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">shyftdata_dir</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">percentiles</span><span class="p">(</span><span class="n">tsv</span><span class="p">:</span> <span class="n">TsVector</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">:</span> <span class="n">TimeAxis</span><span class="p">,</span> <span class="n">percentile_list</span><span class="p">:</span> <span class="n">IntVector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TsVector</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">tsv</span><span class="o">.</span><span class="n">percentiles</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">percentile_list</span><span class="p">)</span>
+
+
+<span class="n">TargetSpecificationVector</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="c1"># Fix up LandTypeFractions</span>
+
+<span class="n">LandTypeFractions</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="k">lambda</span> \
+        <span class="bp">self</span><span class="p">:</span> <span class="s2">&quot;LandTypeFractions(glacier=</span><span class="si">{0}</span><span class="s2">,lake=</span><span class="si">{1}</span><span class="s2">,reservoir=</span><span class="si">{2}</span><span class="s2">,forest=</span><span class="si">{3}</span><span class="s2">,unspecified=</span><span class="si">{4}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">glacier</span><span class="p">(),</span>
+                                                                                                        <span class="bp">self</span><span class="o">.</span><span class="n">lake</span><span class="p">(),</span>
+                                                                                                        <span class="bp">self</span><span class="o">.</span><span class="n">reservoir</span><span class="p">(),</span>
+                                                                                                        <span class="bp">self</span><span class="o">.</span><span class="n">forest</span><span class="p">(),</span>
+                                                                                                        <span class="bp">self</span><span class="o">.</span><span class="n">unspecified</span><span class="p">())</span>
+
+
+<span class="c1"># Fix up GeoCellData</span>
+<span class="k">def</span> <span class="nf">StrGeoCellData</span><span class="p">(</span><span class="n">gcd</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;GeoCellData(mid_point=</span><span class="si">{0}</span><span class="s2">,catchment_id=</span><span class="si">{1}</span><span class="s2">,area=</span><span class="si">{2}</span><span class="s2">,ltf=</span><span class="si">{3}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">gcd</span><span class="o">.</span><span class="n">mid_point</span><span class="p">()),</span>
+                                                                                 <span class="n">gcd</span><span class="o">.</span><span class="n">catchment_id</span><span class="p">(),</span> <span class="n">gcd</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span>
+                                                                                 <span class="nb">str</span><span class="p">(</span><span class="n">gcd</span><span class="o">.</span><span class="n">land_type_fractions_info</span><span class="p">()))</span>
+
+
+<span class="n">GeoCellData</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">StrGeoCellData</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="n">GeoCellData</span><span class="o">.</span><span class="fm">__repr__</span> <span class="o">=</span> <span class="n">GeoCellData</span><span class="o">.</span><span class="fm">__str__</span>
+
+<span class="c1"># Fix up ARegionEnvironment</span>
+<span class="n">TemperatureSource</span><span class="o">.</span><span class="n">vector_t</span> <span class="o">=</span> <span class="n">TemperatureSourceVector</span>
+<span class="n">PrecipitationSource</span><span class="o">.</span><span class="n">vector_t</span> <span class="o">=</span> <span class="n">PrecipitationSourceVector</span>
+<span class="n">RadiationSource</span><span class="o">.</span><span class="n">vector_t</span> <span class="o">=</span> <span class="n">RadiationSourceVector</span>
+<span class="n">RelHumSource</span><span class="o">.</span><span class="n">vector_t</span> <span class="o">=</span> <span class="n">RelHumSourceVector</span>
+<span class="n">WindSpeedSource</span><span class="o">.</span><span class="n">vector_t</span> <span class="o">=</span> <span class="n">WindSpeedSourceVector</span>
+
+<span class="n">Int64Vector</span> <span class="o">=</span> <span class="n">IntVector</span>
+
+
+<div class="viewcode-block" id="np_array"><a class="viewcode-back" href="../../content/hydrology/api.html#shyft.hydrology.np_array">[docs]</a><span class="k">def</span> <span class="nf">np_array</span><span class="p">(</span><span class="n">dv</span><span class="p">:</span> <span class="n">DoubleVector</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    convert flattened double-vector to numpy array</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dv</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">dv</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dv</span><span class="o">.</span><span class="n">size</span><span class="p">()))</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span></div>
+
+
+<span class="c1"># fixup kalman state</span>
+<span class="n">KalmanState</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">KalmanState</span><span class="o">.</span><span class="n">get_x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+                         <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;represents the current bias estimate, kalman.state.x&quot;</span><span class="p">)</span>
+<span class="n">KalmanState</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">KalmanState</span><span class="o">.</span><span class="n">get_k</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+                         <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;represents the current kalman gain factors, kalman.state.k&quot;</span><span class="p">)</span>
+<span class="n">KalmanState</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">np_array</span><span class="p">(</span><span class="n">KalmanState</span><span class="o">.</span><span class="n">get_P</span><span class="p">(</span><span class="bp">self</span><span class="p">)),</span>
+                         <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;returns numpy array of kalman.state.P, the nxn covariance matrix&quot;</span><span class="p">)</span>
+<span class="n">KalmanState</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">np_array</span><span class="p">(</span><span class="n">KalmanState</span><span class="o">.</span><span class="n">get_W</span><span class="p">(</span><span class="bp">self</span><span class="p">)),</span>
+                         <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;returns numpy array of kalman.state.W, the nxn noise matrix&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># fixup KalmanBiasPredictor</span>
+<span class="k">def</span> <span class="nf">KalmanBiasPredictor_update_with_forecast</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="n">fc_set</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bp</span>
+<span class="sd">    fc_set : TemperatureSourceVector or TsVector</span>
+<span class="sd">    obs : TimeSeries</span>
+<span class="sd">    time_axis : TimeAxis</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    nothing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fc_set</span><span class="p">,</span> <span class="n">TemperatureSourceVector</span><span class="p">):</span>
+        <span class="n">KalmanBiasPredictor</span><span class="o">.</span><span class="n">update_with_geo_forecast</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="n">fc_set</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">KalmanBiasPredictor</span><span class="o">.</span><span class="n">update_with_forecast_vector</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="n">fc_set</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">KalmanBiasPredictor_compute_running_bias</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="n">fc_ts</span><span class="p">,</span> <span class="n">obs_ts</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    compute the running bias timeseries,</span>
+<span class="sd">    using one &#39;merged&#39; - forecasts and one observation time - series.</span>
+
+<span class="sd">    Before each day - period, the bias - values are copied out to form</span>
+<span class="sd">    a continuous bias prediction time-series.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    bias_predictor : KalmanBiasPredictor</span>
+<span class="sd">        The bias predictor object it self</span>
+
+<span class="sd">    forecast_ts : TimeSeries</span>
+<span class="sd">        a merged forecast ts</span>
+<span class="sd">        with period covering the observation_ts and time_axis supplied</span>
+
+<span class="sd">    observation ts: TimeSeries</span>
+<span class="sd">        the observation time-series</span>
+
+<span class="sd">    time_axis : TimeAxis</span>
+<span class="sd">        covering the period/timesteps to be updated</span>
+<span class="sd">        e.g. yesterday, 3h resolution steps, according to the points in the filter</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bias_ts : TimeSeries(time_axis,bias_vector,POINT_AVERAGE)</span>
+<span class="sd">        computed running bias-ts</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">KalmanBiasPredictor</span><span class="o">.</span><span class="n">compute_running_bias_ts</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="n">fc_ts</span><span class="p">,</span> <span class="n">obs_ts</span><span class="p">,</span> <span class="n">time_axis</span><span class="p">)</span>
+
+
+<span class="n">KalmanBiasPredictor</span><span class="o">.</span><span class="n">update_with_forecast</span> <span class="o">=</span> <span class="n">KalmanBiasPredictor_update_with_forecast</span>
+<span class="n">KalmanBiasPredictor</span><span class="o">.</span><span class="n">compute_running_bias</span> <span class="o">=</span> <span class="n">KalmanBiasPredictor_compute_running_bias</span>
+
+
+<span class="k">def</span> <span class="nf">geo_point_source_vector_values_at_time</span><span class="p">(</span><span class="n">gtsv</span><span class="p">:</span> <span class="n">GeoPointSourceVector</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="c1"># if not isinstance(gtsv, GeoPointSourceVector):</span>
+    <span class="c1">#    raise RuntimeError(&#39;Supplied list of timeseries must be of GeoPointSourceVector&#39;)</span>
+    <span class="k">return</span> <span class="n">compute_geo_ts_values_at_time</span><span class="p">(</span><span class="n">gtsv</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+
+<span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">geo_point_source_vector_values_at_time</span>
+<span class="c1"># GeoPointSourceVector.values_at_time.__doc__ = compute_geo_ts_values_at_time.__doc__.replace(&#39;DoubleVector&#39;,&#39;ndarray&#39;)</span>
+<span class="n">RadiationSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span>
+<span class="n">PrecipitationSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span>
+<span class="n">TemperatureSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span>
+<span class="n">RelHumSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span>
+<span class="n">WindSpeedSourceVector</span><span class="o">.</span><span class="n">values_at_time</span> <span class="o">=</span> <span class="n">GeoPointSourceVector</span><span class="o">.</span><span class="n">values_at_time</span>
+
+<span class="n">ARegionEnvironment</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;precipitation&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">precipitation</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;radiation&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radiation</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;rel_hum&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_hum</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_speed</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;returns the list of available forcing variables as tuples(string,reference_to_variable)&#39;</span>
+<span class="p">)</span>
+
+<span class="c1">#</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Shyft project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

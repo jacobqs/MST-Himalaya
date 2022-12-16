@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shyft.dashboard.apps.dtss_viewer.widgets &mdash; Documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/bootstrap.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/bootstrap-grid.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../../../_static/js/bootstrap.min.js"></script>
+        <script src="../../../../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../../../_static/js/custom.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> Shyft
+          </a>
+              <div class="version">
+                4.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/project/contact.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Time Series</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/time_series/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/time_series/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/time_series/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/time_series/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hydrology</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/hydrology/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/hydrology/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/hydrology/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/hydrology/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../content/dashboard/api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Shyft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+      <li>shyft.dashboard.apps.dtss_viewer.widgets</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for shyft.dashboard.apps.dtss_viewer.widgets</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span><span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">shyft.dashboard.base.selector_views</span> <span class="kn">import</span> <span class="n">MultiSelect</span><span class="p">,</span> <span class="n">Select</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.ds_view_handle_registry</span> <span class="kn">import</span> <span class="n">DsViewHandleRegistry</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.view_container.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.view_container.table</span> <span class="kn">import</span> <span class="n">Table</span>
+
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.view_container.view_container_base</span> <span class="kn">import</span> <span class="n">BaseViewContainer</span>
+
+<span class="kn">from</span> <span class="nn">shyft.dashboard.base.ports</span> <span class="kn">import</span> <span class="n">Receiver</span><span class="p">,</span> <span class="n">Sender</span><span class="p">,</span> <span class="n">connect_ports</span>
+<span class="kn">import</span> <span class="nn">bokeh.models</span>
+<span class="kn">import</span> <span class="nn">bokeh.layouts</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.base.app</span> <span class="kn">import</span> <span class="n">update_value_factory</span><span class="p">,</span> <span class="n">LayoutComponents</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.apps.dtss_viewer.dtsc_helper_functions</span> <span class="kn">import</span> <span class="n">check_dtss_url</span><span class="p">,</span> <span class="n">find_all_ts_names_and_url</span><span class="p">,</span> \
+    <span class="n">DtssTsAdapter</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.base.selector_model</span> <span class="kn">import</span> <span class="n">SelectorModelBase</span><span class="p">,</span> <span class="n">processing_wrapper</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.base.selector_presenter</span> <span class="kn">import</span> <span class="n">SelectorPresenter</span>
+<span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="kn">import</span> <span class="n">Category20c</span> <span class="k">as</span> <span class="n">Palette</span>  <span class="c1"># @UnresolvedImport</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.sources.source</span> <span class="kn">import</span> <span class="n">DataSource</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.view</span> <span class="kn">import</span> <span class="n">Line</span><span class="p">,</span> <span class="n">TableView</span><span class="p">,</span> <span class="n">DiamondScatter</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.time_series.ds_view_handle</span> <span class="kn">import</span> <span class="n">DsViewHandle</span>
+<span class="kn">from</span> <span class="nn">shyft.dashboard.widgets.selector_models</span> <span class="kn">import</span> <span class="n">LabelDataSelector</span>
+
+
+<span class="k">class</span> <span class="nc">ConsolePrinter</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Small class receiving a string and printing it out on receive</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="c1"># create a receiver port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_text</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;receive text to print&#39;</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_text</span><span class="p">,</span>
+                                     <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_receive_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># create a simple receiving function</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        create a simple receiving function to receive and int and print it</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        text:</span>
+<span class="sd">            text to print</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> received: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ContainerPathReceiver</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dtss_host</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dtss_port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span><span class="o">=</span><span class="mi">20000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtss_host</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">dtss_host</span> <span class="ow">or</span> <span class="s1">&#39;localhost&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtss_port</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="n">dtss_port</span> <span class="ow">or</span> <span class="mi">20000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Container path event messenger&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_dtss_url</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DTSS url sender&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_shyft_container</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;shyft container name sender&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">default_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dtss_host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dtss_port</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtss_url_text_input</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;DTSS url&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">default_url</span><span class="p">,</span><span class="n">placeholder</span><span class="o">=</span><span class="n">default_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Shyft container name&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span><span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtss_url_text_input</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">changed_value_dtss_url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">changed_value_shyft_container</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dtss_text</span> <span class="o">=</span> <span class="n">update_value_factory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtss_url_text_input</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_shyft_container_text</span> <span class="o">=</span> <span class="n">update_value_factory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtss_url_text_input</span><span class="p">),</span>
+                                            <span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span><span class="p">),</span><span class="n">margin</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">layout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">column</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_layout</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">layout_components</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayoutComponents</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;widgets&#39;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dtss_url_text_input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span><span class="p">],</span>
+                <span class="s1">&#39;figures&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="k">def</span> <span class="nf">changed_value_dtss_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">check_dtss_url</span><span class="p">(</span><span class="n">new</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DTSSR: Received valid url: </span><span class="si">{</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_dtss_url</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_shyft_container</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shyft_container_text_input</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DTSSR: Invalid url: </span><span class="si">{</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">changed_value_shyft_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SCNR: Received shyft container name: </span><span class="si">{</span><span class="n">new</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_shyft_container</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TsSelector"><a class="viewcode-back" href="../../../../../content/dashboard/api.html#shyft.dashboard.apps.dtss_viewer.widgets.TsSelector">[docs]</a><span class="k">class</span> <span class="nc">TsSelector</span><span class="p">(</span><span class="n">SelectorModelBase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">presenter</span><span class="p">:</span> <span class="n">SelectorPresenter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">presenter</span><span class="o">=</span><span class="n">presenter</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ts_list</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TS selector event messenger&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_selected_time_series</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;send_selected_time_series&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_url</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;receive url&#39;</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_url</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_container</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;receive container&#39;</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_container</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_receive_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_list</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_receive_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_list</span><span class="p">()</span>
+
+    <span class="nd">@processing_wrapper</span>
+    <span class="k">def</span> <span class="nf">get_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">find_all_ts_names_and_url</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TSS: could not retrieve data&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">update_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TSS: updating TS list&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ts_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">presenter</span><span class="o">.</span><span class="n">set_selector_options</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ts_list</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                            <span class="n">selected_value</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;shyft://test/ts-0&quot;</span><span class="p">],</span>
+                                            <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_change_selected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selected_values</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TSS: received </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">selected_values</span><span class="p">)</span><span class="si">}</span><span class="s2"> Time Series&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_selected_time_series</span><span class="p">(</span><span class="n">selected_values</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">TsView</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figure</span><span class="p">:</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">Table</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">figure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">table</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_line</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">Palette</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line_styles</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="s1">&#39;dotdash&#39;</span><span class="p">,</span> <span class="s1">&#39;dashdot&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TsView event messenger&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_dtss_url</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;send_selected_time_series&quot;</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_set_url</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view_handles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_time_series</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;send_selected_time_series&quot;</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_add_time_series</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_selected</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ts_selected&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">DsViewHandle</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_set_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url_str</span> <span class="o">=</span> <span class="n">url</span>
+
+    <span class="k">def</span> <span class="nf">_add_time_series</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ts_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view_handles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Add time-series </span><span class="si">{</span><span class="n">ts_names</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ts_name</span> <span class="ow">in</span> <span class="n">ts_names</span><span class="p">:</span>
+            <span class="n">ts_adapter</span> <span class="o">=</span> <span class="n">DtssTsAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url_str</span><span class="p">,</span> <span class="n">ts_name</span><span class="p">)</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">ts_adapter</span><span class="o">=</span><span class="n">ts_adapter</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="n">ts_name</span><span class="p">)</span>
+            <span class="n">view</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">view_container</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color_line</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">ts_name</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+        <span class="n">table_view</span> <span class="o">=</span> <span class="n">TableView</span><span class="p">(</span><span class="n">view_container</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;demo&#39;</span><span class="p">},</span> <span class="n">label</span><span class="o">=</span><span class="n">ts_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">view_handle</span> <span class="o">=</span> <span class="n">DsViewHandle</span><span class="p">(</span><span class="n">data_source</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="n">view</span><span class="p">,</span> <span class="n">table_view</span><span class="p">],</span> <span class="n">tag</span><span class="o">=</span><span class="n">ts_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view_handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">view_handle</span><span class="p">)</span>
+
+        <span class="c1"># print(self.view_handles)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_selected</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view_handles</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">LineStyleChanger</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">line_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="s1">&#39;dotdash&#39;</span><span class="p">,</span> <span class="s1">&#39;dashdot&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_ds_view_handles_to_add</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TS to add&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">DsViewHandle</span><span class="p">],</span>
+                                                       <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_ds_view_handles_to_add</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_ds_view_handles_to_remove</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TS to remove&quot;</span><span class="p">,</span>
+                                                          <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="n">DsViewHandle</span><span class="p">],</span>
+                                                          <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_ds_view_handles_to_remove</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">receive_line_styles</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;linestyle to change&quot;</span><span class="p">,</span>
+                                            <span class="n">signal_type</span><span class="o">=</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                                            <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_line_style</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span> <span class="o">=</span> <span class="n">Sender</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;DsView event messenger&quot;</span><span class="p">,</span> <span class="n">signal_type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dsvh_registry</span> <span class="o">=</span> <span class="n">DsViewHandleRegistry</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">select_view</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Select line-style&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+        <span class="n">select_presenter</span> <span class="o">=</span> <span class="n">SelectorPresenter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Line-style&#39;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">select_view</span><span class="p">)</span>
+        <span class="n">select_model</span> <span class="o">=</span> <span class="n">LabelDataSelector</span><span class="p">(</span><span class="n">presenter</span><span class="o">=</span><span class="n">select_presenter</span><span class="p">)</span>
+        <span class="n">select_model</span><span class="o">.</span><span class="n">receive_labels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">line_styles</span><span class="p">)</span>
+
+        <span class="n">connect_ports</span><span class="p">(</span><span class="n">select_model</span><span class="o">.</span><span class="n">send_selected_labels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">receive_line_styles</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_view</span><span class="o">.</span><span class="n">layout</span>
+
+    <span class="k">def</span> <span class="nf">_receive_ds_view_handles_to_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsvhs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DsViewHandle</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dsvh_registry</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dsvhs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_receive_ds_view_handles_to_remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsvhs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DsViewHandle</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dsvh_registry</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">dsvhs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_receive_line_style</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line_style</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_event_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change line style to </span><span class="si">{</span><span class="n">line_style</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">dsvh</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dsvh_registry</span><span class="o">.</span><span class="n">ds_view_handles</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dsvh</span><span class="o">.</span><span class="n">views</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Line</span><span class="p">):</span>
+                    <span class="n">v</span><span class="o">.</span><span class="n">line_style</span> <span class="o">=</span> <span class="n">line_style</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">ConsolePrinter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;dtss printer&#39;</span><span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">receive_text</span><span class="p">(</span><span class="s2">&quot;blub&quot;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Shyft project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
