@@ -1,0 +1,40 @@
+---
+repository:
+  class: !!python/name:shyft.hydrology.repository.rasputindf.cf_region_model_repository.CFRegionModelRepository
+  params:
+    data_file: netcdf/orchestration-testdata/tin_cell_data.nc
+    get_model_from_tin_repo: True
+    tin_uid: ['404']
+    tin_data_folder: netcdf/orchestration-testdata/tin_archive
+
+domain:
+  EPSG: 32645
+  nx: 9120
+  ny: 9120
+  step_x: 1000
+  step_y: 1000
+  lower_left_x: 97121.29406171688
+  lower_left_y: 381013.5445878378
+
+catchment_indices:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+
+#parameter_overrides:
+#  1228:
+#    kirchner:
+#        c1: -2.539
+...

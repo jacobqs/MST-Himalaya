@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shyft.dashboard.base.app &mdash; Documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/bootstrap.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/bootstrap-grid.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../../_static/js/bootstrap.min.js"></script>
+        <script src="../../../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../../_static/js/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Shyft
+          </a>
+              <div class="version">
+                4.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/project/contact.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Time Series</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/time_series/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/time_series/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/time_series/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/time_series/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hydrology</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/hydrology/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/hydrology/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/hydrology/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/hydrology/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../content/dashboard/api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Shyft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      <li>shyft.dashboard.base.app</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for shyft.dashboard.base.app</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains classes and methods to define and serve bokeh apps for all projects in the same way</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.application</span> <span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span> <span class="nn">bokeh.application.handlers</span> <span class="kn">import</span> <span class="n">FunctionHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">row</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.server</span> <span class="kn">import</span> <span class="n">Server</span>
+
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span> <span class="nn">tornado.ioloop</span> <span class="kn">import</span> <span class="n">IOLoop</span>
+
+<span class="kn">import</span> <span class="nn">bokeh</span>
+
+<span class="kn">from</span> <span class="nn">shyft.dashboard.widgets.logger_box</span> <span class="kn">import</span> <span class="n">LoggerBox</span>
+
+
+<span class="k">class</span> <span class="nc">AppBase</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is the base class for any Dashboard app</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">thread_pool</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ThreadPoolExecutor</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">app_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Init of base app</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        thread_pool:</span>
+<span class="sd">            Optional thread pool used for async calls within the app</span>
+<span class="sd">        app_kwargs:</span>
+<span class="sd">            Optional keyword arguments provided to the app through the start_bokeh_apps methods</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thread_pool</span> <span class="o">=</span> <span class="n">thread_pool</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This property returns the name of the app</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc</span><span class="p">:</span> <span class="s1">&#39;bokeh.document.Document&#39;</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LoggerBox</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LayoutDOM</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function returns the full page layout for the app</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">make_document</span><span class="p">(</span><span class="n">doc</span><span class="p">:</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">Document</span><span class="p">,</span>
+                  <span class="n">get_app_layout</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">bokeh</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">Document</span><span class="p">],</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LayoutDOM</span><span class="p">],</span>
+                  <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                  <span class="n">enable_logger_box</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function creates a specific document for a user request and fills in the layout of the app provided by</span>
+<span class="sd">    the layout callback. (The layout callback should be the implemented method BaseApp.get_layout of the BaseApp)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    doc:</span>
+<span class="sd">        bokeh document provided by the bokeh server</span>
+<span class="sd">    get_app_layout:</span>
+<span class="sd">        layout callback should return the entire layout of the app</span>
+<span class="sd">    log_level:</span>
+<span class="sd">        log level to initialize the logger box widget</span>
+<span class="sd">    enable_logger_box:</span>
+<span class="sd">        if enabled a logger box widget is added to the app, which shows the log msg from all</span>
+<span class="sd">        app widgets, this requires that logger in the BaseApp.get_layout function is passed to the widgets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logger_box</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">enable_logger_box</span><span class="p">:</span>
+        <span class="n">logger_box</span> <span class="o">=</span> <span class="n">LoggerBox</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">log_level</span><span class="p">)</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">get_app_layout</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">logger_box</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">enable_logger_box</span><span class="p">:</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">logger_box</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span>
+                        <span class="n">row</span><span class="p">(</span><span class="n">layout</span><span class="p">))</span>
+    <span class="n">doc</span><span class="o">.</span><span class="n">add_root</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="start_bokeh_apps"><a class="viewcode-back" href="../../../../content/dashboard/api.html#shyft.dashboard.apps.start_bokeh_apps.start_bokeh_apps">[docs]</a><span class="k">def</span> <span class="nf">start_bokeh_apps</span><span class="p">(</span><span class="n">apps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">AppBase</span><span class="p">]],</span>
+                     <span class="n">show</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5006</span><span class="p">,</span>
+                     <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span>
+                     <span class="n">async_on</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="n">async_max_worker</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+                     <span class="n">show_logger_box</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">server_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">app_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function starts a bokeh serve with the apps provided to the function</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    apps:</span>
+<span class="sd">        List of AppBase classes</span>
+<span class="sd">    show:</span>
+<span class="sd">        if True a browser with all apps will be opened</span>
+<span class="sd">    port:</span>
+<span class="sd">        port where on which the apps are loaded &#39;localhost:port&#39;</span>
+<span class="sd">    log_level:</span>
+<span class="sd">        Logging level in the console</span>
+<span class="sd">    async_on:</span>
+<span class="sd">        use async data loading</span>
+<span class="sd">    async_max_worker:</span>
+<span class="sd">        number of workers for thread pool doing the async data loading</span>
+<span class="sd">    show_logger_box:</span>
+<span class="sd">        enable in-app logger</span>
+<span class="sd">    server_kwargs:</span>
+<span class="sd">        keyword arguments for the Bokeh / tornado server</span>
+<span class="sd">    app_kwargs:</span>
+<span class="sd">        list of dictionaries of additional keyword arguments for the apps, if a single dictionary is passed, a list</span>
+<span class="sd">        is created with the same length as the number of apps</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">server_kwargs</span><span class="p">:</span>
+        <span class="n">server_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">app_kwargs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">app_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="n">app_kwargs</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">app_kwargs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">app_kwargs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="k">if</span> <span class="n">app_kwargs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">app_kwargs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">app_kwargs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">apps</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Required: len(app_kwargs) == len(apps), </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">app_kwargs</span><span class="p">)</span><span class="si">}</span><span class="s1"> != </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+    <span class="n">dp_pct</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">show</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">pct</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">if</span> <span class="n">async_on</span><span class="p">:</span>
+        <span class="n">thread_pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">async_max_worker</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">thread_pool</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">io_loop</span> <span class="o">=</span> <span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span>
+    <span class="n">end_points</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">app</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">app_kwargs</span><span class="p">):</span>
+        <span class="n">pct</span> <span class="o">+=</span> <span class="n">dp_pct</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2">%]  Initializing: </span><span class="si">{</span><span class="n">app</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">app_instance</span> <span class="o">=</span> <span class="n">app</span><span class="p">(</span><span class="n">thread_pool</span><span class="o">=</span><span class="n">thread_pool</span><span class="p">,</span> <span class="n">app_kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">AppBase</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;App </span><span class="si">{</span><span class="n">app</span><span class="si">}</span><span class="s2"> is not of type AppBase .. skipped&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">app_instance</span> <span class="ow">in</span> <span class="n">end_points</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WARNING: Not Adding App </span><span class="si">{</span><span class="n">app_instance</span><span class="si">}</span><span class="s2"> with name </span><span class="si">{</span><span class="n">app_instance</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> since endpoint exists already&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">make_doc</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">make_document</span><span class="p">,</span>
+                           <span class="n">get_app_layout</span><span class="o">=</span><span class="n">app_instance</span><span class="o">.</span><span class="n">get_layout</span><span class="p">,</span>
+                           <span class="n">enable_logger_box</span><span class="o">=</span><span class="n">show_logger_box</span><span class="p">,</span>
+                           <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
+        <span class="n">end_points</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">app_instance</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="n">FunctionHandler</span><span class="p">(</span><span class="n">make_doc</span><span class="p">))</span>
+    <span class="n">pct</span> <span class="o">+=</span> <span class="n">dp_pct</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2">%]  Set up server with async_on=</span><span class="si">{</span><span class="n">async_on</span><span class="si">}</span><span class="s2">  and workers=</span><span class="si">{</span><span class="n">async_max_worker</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">end_points</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">allow_websocket_origin</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">server_kwargs</span><span class="p">)</span>
+    <span class="n">pct</span> <span class="o">+=</span> <span class="n">dp_pct</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2">%]  Start bokeh server: apps are served on port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;                            http://localhost:</span><span class="si">{</span><span class="n">port</span><span class="si">}{</span><span class="n">app</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">end_points</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">urls</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">pct</span> <span class="o">+=</span> <span class="n">dp_pct</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2">%]  Launching website&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">end_points</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">server</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s1">&#39;windows-default&#39;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="s1">&#39;tab&#39;</span><span class="p">)</span>
+
+    <span class="n">pct</span> <span class="o">+=</span> <span class="n">dp_pct</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">pct</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2">%]  Start io_loop: this may take a while ...&quot;</span><span class="p">)</span>
+    <span class="n">io_loop</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+<span class="n">LayoutComponents</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">update_value_factory</span><span class="p">(</span><span class="n">layout_dom_object</span><span class="p">,</span>
+                         <span class="n">callback_attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                         <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Factory method to create update functions for attributes bokeh layout dom objects, without triggering the</span>
+<span class="sd">    connected callback functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    layout_dom_object:</span>
+<span class="sd">        bokeh object</span>
+<span class="sd">    callback_attr:</span>
+<span class="sd">        attribute to update</span>
+<span class="sd">    logger:</span>
+<span class="sd">        logger</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Callable which takes one argument to update the bokeh object attribute  callback_attr</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">callback_attr</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2">&#39;, update_value_factory  callback_attr must be str type, was &#39;</span><span class="si">{</span><span class="n">callback_attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        
+
+    <span class="k">class</span> <span class="nc">ValueSetter</span><span class="p">:</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout_dom_object</span><span class="p">,</span> <span class="n">callback_attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span> <span class="o">=</span> <span class="n">layout_dom_object</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span> <span class="o">=</span> <span class="n">callback_attr</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_dict</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="p">,</span> <span class="n">callback_attr</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2">&#39;, update_value_factory &#39;</span><span class="si">{</span><span class="n">layout_dom_object</span><span class="si">}</span><span class="s2">&#39; has not callback_attr &#39;</span><span class="si">{</span><span class="n">callback_attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">update_value_without_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># python callbacks</span>
+            <span class="n">c_funcs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">_callbacks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">c_func</span> <span class="ow">in</span> <span class="n">c_funcs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">remove_on_change</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span><span class="p">,</span> <span class="n">c_func</span><span class="p">)</span>
+            <span class="c1"># js callbacks</span>
+            <span class="n">js_funcs</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">js_callbacks</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">js_property_callbacks</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="k">for</span> <span class="n">js_func_name</span><span class="p">,</span> <span class="n">js_func</span> <span class="ow">in</span> <span class="n">js_callbacks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">js_funcs</span><span class="p">[</span><span class="n">js_func_name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">js_property_callbacks</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">js_func_name</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">update_dict</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log_exception</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="s2">&quot;NoCallbackValueSetter Error: &quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">e</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log_exception</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="s2">&quot;NoCallbackValueSetter Unhandled Error: &quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">e</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">c_func</span> <span class="ow">in</span> <span class="n">c_funcs</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">callback_attr</span><span class="p">,</span> <span class="n">c_func</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout_dom_object</span><span class="o">.</span><span class="n">js_property_callbacks</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">js_funcs</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">_log_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">exception</span><span class="p">))</span>
+
+    <span class="n">update_value_function</span> <span class="o">=</span> <span class="n">ValueSetter</span><span class="p">(</span><span class="n">layout_dom_object</span><span class="p">,</span> <span class="n">callback_attr</span><span class="p">,</span> <span class="n">logger</span><span class="p">)</span><span class="o">.</span><span class="n">update_value_without_callback</span>
+
+    <span class="k">return</span> <span class="n">update_value_function</span>
+
+
+<span class="k">class</span> <span class="nc">Widget</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Base class for all Widgets</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        logger:</span>
+<span class="sd">            Optional logger, e.g composable_logger_box</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">logger</span><span class="p">:</span>
+            <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;layout_components&#39;</span><span class="p">,</span> <span class="s1">&#39;update_value_factory&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">layout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LayoutDOM</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">layout_components</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LayoutComponents</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; Property to return all layout.dom components of an visualisation app</span>
+<span class="sd">        such that they can be arranged by the parent layout obj as</span>
+<span class="sd">        desired.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        layout_components as: {&#39;widgets&#39;: [], &#39;figures&#39;: []}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">update_value_factory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout_dom_object</span><span class="p">,</span> <span class="n">callback_attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">update_value_factory</span><span class="p">(</span><span class="n">layout_dom_object</span><span class="o">=</span><span class="n">layout_dom_object</span><span class="p">,</span>
+                                    <span class="n">callback_attr</span><span class="o">=</span><span class="n">callback_attr</span><span class="p">,</span>
+                                    <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Shyft project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

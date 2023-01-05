@@ -1,0 +1,562 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>shyft.energy_market.core &mdash; Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/bootstrap-grid.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../../_static/js/bootstrap.min.js"></script>
+        <script src="../../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../_static/js/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Shyft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.12
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/project/contact.html">Contact</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Time Series</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/time_series/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/time_series/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/time_series/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/time_series/api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Hydrology</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/hydrology/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/hydrology/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/hydrology/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/hydrology/api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../content/dashboard/api.html">API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Shyft</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>shyft.energy_market.core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for shyft.energy_market.core</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">shyft.time_series</span> <span class="kn">import</span> <span class="n">DoubleVector</span><span class="p">,</span><span class="n">time</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="c1"># The absolute import here is PyCharm specific. Please consider removing this when PyCharm improves!</span>
+<span class="kn">from</span> <span class="nn">._core</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.model_repository</span> <span class="kn">import</span> <span class="n">ModelRepository</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">...utilities.environ_util</span> <span class="kn">import</span> <span class="n">add_lib_path</span>
+<span class="n">add_lib_path</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="EnergyMarketCorePropertyError"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.EnergyMarketCorePropertyError">[docs]</a><span class="k">class</span> <span class="nc">EnergyMarketCorePropertyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Error type for when a C++ object&#39;s property fails, but</span>
+<span class="sd">    it shouldn&#39;t attempt __getattr__ afterwards.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="no_getattr_if_exception"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.no_getattr_if_exception">[docs]</a><span class="k">def</span> <span class="nf">no_getattr_if_exception</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator for energy_market.core properties that might throw AttributeErrors,</span>
+<span class="sd">    but that we don&#39;t want to continue into __getattr__.</span>
+<span class="sd">    Instead we want it to throw the error received from the first attempt.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapped_func</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">EnergyMarketCorePropertyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapped_func</span></div>
+
+
+<div class="viewcode-block" id="requires_data_object"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.requires_data_object">[docs]</a><span class="k">class</span> <span class="nc">requires_data_object</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Decorator class for functions for lazy evaluations of Energy Market Core object attributes.</span>
+<span class="sd">    The decorator checks whether &quot;obj&quot;-attribute has been set, and if not, applies a user-defined function</span>
+<span class="sd">    to construct obj, before making the function call.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">construct_func</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param construct_func: Function that&#39;s assumed to take one positional argument and return anything.</span>
+<span class="sd">            Intended usage is that construct_func takes em.core.&lt;Python wrapped C++ object&gt; and construct</span>
+<span class="sd">            an instance of some Python object that will help in mimicking the interfaces found in statkraft.ltm classes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">construct_func</span> <span class="o">=</span> <span class="n">construct_func</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decorator function.</span>
+<span class="sd">        :param func: Function to be decorated.</span>
+<span class="sd">            Intended usage is that func should be a class method, and so the first argument should be &quot;self&quot;.</span>
+<span class="sd">        :return:  Decorated function that first constructs Python object, if necessary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapped_func</span><span class="p">(</span><span class="n">cppobj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">cppobj</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">wrapped_func</span><span class="o">.</span><span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">cppobj</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_func</span><span class="p">(</span><span class="n">cppobj</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">cppobj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">wrapped_func</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">wrapped_func</span></div>
+
+
+<div class="viewcode-block" id="get_dir"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_dir">[docs]</a><span class="k">def</span> <span class="nf">get_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Appends the content of __dir__ from the Python object to &quot;self&quot;</span>
+<span class="sd">    :param self: A python-wrapped C++ object</span>
+<span class="sd">    :return: [List] The updated self.__dir__()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()))</span></div>
+
+
+<div class="viewcode-block" id="get_object_attribute"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_object_attribute">[docs]</a><span class="k">def</span> <span class="nf">get_object_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exposes the attributes of self&#39;s object to self (Self is a Python-wrapped C++ object and self&#39;s object is a</span>
+<span class="sd">    Python object). Should be decorated with get_attribute_for_core_objects together with a suitable function to</span>
+<span class="sd">    construct self.obj from self.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_item_from_name"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_item_from_name">[docs]</a><span class="k">def</span> <span class="nf">get_item_from_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the element in the self (a C++ std::vector object) having key as index or element name.</span>
+
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :param key: An integer, slice or string (element name)</span>
+<span class="sd">    :return: The element with the corresponding key</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="n">obj</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Object not found in the list.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">item</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_item_old</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_item_from_id"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_item_from_id">[docs]</a><span class="k">def</span> <span class="nf">get_item_from_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the element in the self (C++ std::vector object) having key as index or element id.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :param key: An integer, slice or string (element id)</span>
+<span class="sd">    :return: The element with the corresponding key</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">ikey</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ikey</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="n">obj</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Object not found in the list.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">item</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_item_old</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_name_based_items"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_name_based_items">[docs]</a><span class="k">def</span> <span class="nf">get_name_based_items</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a generator of elements contained in self (a C++ std::vector). Solely implemented to imitate the items()</span>
+<span class="sd">    method of a python dictionary.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :return: A generator containing a tuple of elements and the corresponding element ids</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_id_based_items"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_id_based_items">[docs]</a><span class="k">def</span> <span class="nf">get_id_based_items</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a generator of elements contained in self (a C++ std::vector). Solely implemented to imitate the items()</span>
+<span class="sd">    method of a python dictionary.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :return: A generator containing a tuple of elements and the corresponding element ids</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_values"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_values">[docs]</a><span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a generator for the elements contained in self, which is a C++ std::vector object. The purpose of this</span>
+<span class="sd">    method is to imitate the values() method of a Python dictionary.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :return: A generator containing a tuple of elements</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_name_based_keys"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_name_based_keys">[docs]</a><span class="k">def</span> <span class="nf">get_name_based_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a generator for the element names contained in self, which is a C++ std::vector object. The purpose of this</span>
+<span class="sd">    method is to imitate the keys() method of a Python dictionary.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :return: A generator containing a tuple of element names</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_id_based_keys"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.get_id_based_keys">[docs]</a><span class="k">def</span> <span class="nf">get_id_based_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a generator for the element ids contained in self, which is a C++ std::vector object. The purpose of this</span>
+<span class="sd">    method is to imitate the keys() method of a Python dictionary.</span>
+<span class="sd">    :param self: A C++ std::vector object</span>
+<span class="sd">    :return: A generator containing a tuple of element ids</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="add_hydro_connection_lists"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.add_hydro_connection_lists">[docs]</a><span class="k">def</span> <span class="nf">add_hydro_connection_lists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">HydroConnectionList</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HydroConnectionList</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overloads the addition operator (+) for HydroConnectionList</span>
+<span class="sd">    :param self: A HydroConnectionList</span>
+<span class="sd">    :param x: Another HydroConnectionList</span>
+<span class="sd">    :return: self</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span></div>
+
+
+<div class="viewcode-block" id="list_class_str"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.list_class_str">[docs]</a><span class="k">def</span> <span class="nf">list_class_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    String representation for the C++ List classes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">objects</span><span class="si">}</span><span class="s2">]&quot;</span></div>
+
+
+<div class="viewcode-block" id="dict_class_str"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.dict_class_str">[docs]</a><span class="k">def</span> <span class="nf">dict_class_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    String representation for the Python-wrapped C++ Dict class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">elements</span><span class="si">}</span><span class="s2">]&quot;</span></div>
+
+
+<div class="viewcode-block" id="hydro_connection_list_str"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.hydro_connection_list_str">[docs]</a><span class="k">def</span> <span class="nf">hydro_connection_list_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    String representation for the Python-wrapped C++ HydroConnectionList class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;(target:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">target</span><span class="p">)</span><span class="si">}</span><span class="s2">, role=</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">role</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">objects</span><span class="si">}</span><span class="s2">]&quot;</span></div>
+
+
+<div class="viewcode-block" id="add_methods_to_id_based_interface"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.add_methods_to_id_based_interface">[docs]</a><span class="k">def</span> <span class="nf">add_methods_to_id_based_interface</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds Python-Dict methods to C++ std::vector (used for id-based dicts, e.g., std::vector&lt;hydro_component_&gt;)</span>
+<span class="sd">    :param cls: A Python-wrapped C++ std::vector object</span>
+<span class="sd">    :return: cls with methods items(), values(), and keys()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">get_id_based_items</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">get_values</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="n">get_id_based_keys</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">get_item_old</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="fm">__getitem__</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__getitem__</span> <span class="o">=</span> <span class="n">get_item_from_id</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__contains__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="n">list_class_str</span>
+    <span class="k">return</span> <span class="bp">cls</span></div>
+
+
+<div class="viewcode-block" id="add_methods_to_name_based_interface"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.add_methods_to_name_based_interface">[docs]</a><span class="k">def</span> <span class="nf">add_methods_to_name_based_interface</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds Python-Dict methods to C++ vector (used for name-based dicts, e.g., std::vector&lt;hydro_power_system_&gt;)</span>
+<span class="sd">    :param cls: A Python-wrapped C++ vector object</span>
+<span class="sd">    :return: cls with methods items(), values(), and keys()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">get_name_based_items</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">get_values</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="n">get_name_based_keys</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="n">get_item_old</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="fm">__getitem__</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__getitem__</span> <span class="o">=</span> <span class="n">get_item_from_name</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__contains__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="bp">cls</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="n">list_class_str</span>
+    <span class="k">return</span> <span class="bp">cls</span></div>
+
+
+<span class="c1"># **********************************************************************************************************************</span>
+<span class="c1">#                   Backward compatibility</span>
+<span class="c1"># **********************************************************************************************************************</span>
+<span class="n">Aggregate</span> <span class="o">=</span> <span class="n">Unit</span>
+<span class="n">AggregateList</span> <span class="o">=</span> <span class="n">UnitList</span>
+<span class="n">PowerStation</span> <span class="o">=</span> <span class="n">PowerPlant</span>
+<span class="n">PowerStationList</span> <span class="o">=</span> <span class="n">PowerPlantList</span>
+<span class="n">WaterRoute</span> <span class="o">=</span> <span class="n">Waterway</span>
+<span class="n">WaterRouteList</span> <span class="o">=</span> <span class="n">WaterwayList</span>
+
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_river</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_river</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_tunnel</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_tunnel</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_aggregate</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_unit</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_unit</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_unit</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_gate</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_gate</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_power_station</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_power_plant</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_power_plant</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_power_plant</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_reservoir</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_reservoir</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">create_catchment</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">HydroPowerSystemBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_catchment</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">to_blob</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="n">HydroPowerSystem</span><span class="o">.</span><span class="n">to_blob_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="c1"># fixup building Model, ModelArea</span>
+<span class="n">Model</span><span class="o">.</span><span class="n">create_model_area</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">ModelBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_model_area</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">)</span>
+<span class="n">Model</span><span class="o">.</span><span class="n">create_power_module</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">ModelBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_power_module</span><span class="p">(</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span>
+<span class="n">Model</span><span class="o">.</span><span class="n">create_power_line</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">ModelBuilder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">create_power_line</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">ModelArea</span><span class="o">.</span><span class="n">create_power_module</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">ModelBuilder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">create_power_module</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="c1"># **********************************************************************************************************************</span>
+<span class="c1">#                       Add Python Dictionary/List properties to C++ vectors/maps</span>
+<span class="c1"># **********************************************************************************************************************</span>
+<span class="n">ReservoirList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">ReservoirList</span><span class="p">)</span>
+<span class="n">WaterRouteList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">WaterRouteList</span><span class="p">)</span>
+<span class="n">AggregateList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">AggregateList</span><span class="p">)</span>
+<span class="n">GateList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">GateList</span><span class="p">)</span>
+<span class="n">CatchmentList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">CatchmentList</span><span class="p">)</span>
+<span class="n">PowerStationList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">PowerStationList</span><span class="p">)</span>
+<span class="n">HydroComponentList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">HydroComponentList</span><span class="p">)</span>
+<span class="n">HydroPowerSystemList</span> <span class="o">=</span> <span class="n">add_methods_to_name_based_interface</span><span class="p">(</span><span class="n">HydroPowerSystemList</span><span class="p">)</span>
+
+<span class="n">HydroConnectionList</span><span class="o">.</span><span class="fm">__add__</span> <span class="o">=</span> <span class="n">add_hydro_connection_lists</span>
+<span class="n">HydroConnectionList</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="n">hydro_connection_list_str</span>
+
+<span class="n">ModelList</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">ModelList</span><span class="p">)</span>
+<span class="n">ModelAreaDict</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="n">dict_class_str</span>
+<span class="n">PowerLineList</span> <span class="o">=</span> <span class="n">add_methods_to_name_based_interface</span><span class="p">(</span><span class="n">PowerLineList</span><span class="p">)</span>
+<span class="n">PowerModuleDict</span> <span class="o">=</span> <span class="n">add_methods_to_id_based_interface</span><span class="p">(</span><span class="n">PowerModuleDict</span><span class="p">)</span>
+<span class="n">HydroPowerSystemDict</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="p">((</span><span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span>
+<span class="n">HydroPowerSystemDict</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="create_model_service"><a class="viewcode-back" href="../../../content/energy_market/api.html#shyft.energy_market.core.create_model_service">[docs]</a><span class="k">def</span> <span class="nf">create_model_service</span><span class="p">(</span><span class="n">model_directory</span><span class="p">:</span><span class="nb">str</span> <span class="p">,</span> <span class="n">storage_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;blob&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create and return the client for the Ltm model service</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model_directory:</span>
+<span class="sd">        specifies the network host name, ip, name</span>
+<span class="sd">    storage_type:</span>
+<span class="sd">        specifies type of api-service, (&#39;blob&#39;)</span>
+<span class="sd">        default = &#39;blob&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">storage_type</span> <span class="o">==</span> <span class="s1">&#39;blob&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_directory</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Model directory does not exists:&#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_directory</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">model_directory</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Specified model directory is not a directory:&#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model_directory</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">ModelRepository</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
+
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;unknown service storage type specified, please support &#39;db&#39; or &#39;blob&#39;&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Shyft project.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

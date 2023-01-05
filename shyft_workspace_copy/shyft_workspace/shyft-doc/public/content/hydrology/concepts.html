@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concepts &mdash; Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/bootstrap-grid.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="../../_static/js/bootstrap.min.js"></script>
+        <script src="../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting started" href="getting_started.html" />
+    <link rel="prev" title="Package shyft" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Shyft
+          </a>
+              <div class="version">
+                4.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contact.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Time Series</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hydrology</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hydrological-region-model">Hydrological region model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orchestration">Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-generic-repository">The <cite>generic</cite> repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-repository-entries-in-datasets-yaml">The ‘repository’ entries in ‘datasets.yaml’</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-repository-entry-in-configuration-yaml">The ‘repository’ entry in ‘configuration.yaml’</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-repository">What is a repository?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-shyft">Configuring Shyft</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard/api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Shyft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Concepts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/content/hydrology/concepts.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline"></a></h1>
+<p>This section contains explanations of the concepts underlying the architectural decisions
+and inner workings of this package.</p>
+<p><code class="docutils literal notranslate"><span class="pre">shyft</span></code> is meant to provide facilities for conducting hydrologic simulations and
+accessing uncertainty resulting from the forcing data and decisions regarding
+model structure.</p>
+<div class="section" id="hydrological-region-model">
+<h2>Hydrological region model<a class="headerlink" href="#hydrological-region-model" title="Permalink to this headline"></a></h2>
+<p>The hydrological region-model consists of cells, where each cell have a “personality”
+that models the geo-physical properties that best fits that part of the model. Each
+cell must have a catchment-identifier, that allows the cells to be summed together in
+order to provide catchment scale computations.</p>
+<p>At region-level, users can set the method-stack-parameter for each catchment-id.
+Technically, this can be done on each cell as well. Each cell can optionally be connected
+to a river-model, where the response from the cell to the first river can be shaped by a
+convolution mask (u-hydrogram). Rivers get their input from the connected cells, as well
+as upstream river-segments, allowing routing to take place, of the sum-flow that is shaped
+and delayed using a convolution mask.</p>
+<p>The region-model object provides methods to interpolate/project external forcing data, like
+temperature, precipitation etc. on to the cells taking the cell-distance/height etc. into account.
+Furthermore, it provides means of parameter-optimization where the user provides a goal-function
+and ranges for selected parameters, allowing optimization routines to find the parameters
+minimizing the value of the goal-function. The specification of a goal function is very flexible,
+allowing multiple criteria and period-selective calibration strategies.</p>
+</div>
+<div class="section" id="orchestration">
+<h2>Orchestration<a class="headerlink" href="#orchestration" title="Permalink to this headline"></a></h2>
+<p>In order to perform the simulations Shyft needs to ingest data coming
+from observations (meteorological stations, catchment discharges…)
+and possible previous calibration runs prior to fill its internal data
+structures and proceed with a simulation run. The specification of
+this data ingestion process is called ‘orchestration’ in Shyft.</p>
+<p>Although the core of the Shyft simulation code is written in C++, all
+the orchestration code is written in Python and uses the Python-API
+exposed by Shyft in order to populate the C++ data structures. In
+addition, the orchestration code adds another abstraction layer that
+allows the end user to write their own repositories classes with a
+minimal (or no) knowledge of Shyft core internals.</p>
+<p>The orchestration code uses YAML configuration files in order to
+define a calibration or simulation run and provides basic
+infrastructure in order to read them, but still allowing the user to
+add its own code to tailor the calibration/simulation.  This chapter
+explains how the user can customize the orchestration process so that
+she can better adapt it to read her own data in any format she want.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>..WARNING::</dt><dd><p>The repository and orchestration are undergoing a refactorization
+and some of the following may not be completely relevant or updated.</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="repositories">
+<h3>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline"></a></h3>
+<p>Before to start, we need to introduce the concept of repository in
+Shyft.  A repository is just a collection of data in some arbitrary
+format, but in Shyft, it has the particular meaning of the <strong>Python code</strong>
+that can read this data and feed it to the Shyft core.</p>
+<p>The <cite>Shyft.repository</cite> package offers interfaces (via Python ABC
+classes) so that the user can provide concrete implementations of his
+own repositories. In this approach users can provide their own
+repositories customized to their own configuration files (typically
+slight variations of the YAML config files that come with Shyft) and a
+diversity of data formats (maybe a whole collection of files,
+databases, etc.). In addition, some concrete repositories are being
+distributed so that they can be used right away. These concrete
+repositories can also be taken as an example of implementation for
+other user-defined repositories too.</p>
+<div class="section" id="the-generic-repository">
+<h4>The <cite>generic</cite> repository<a class="headerlink" href="#the-generic-repository" title="Permalink to this headline"></a></h4>
+<p>One of the repositories that comes with Shyft, and is named ‘generic’
+because it is very simple and not meant to read from complicated
+datasets. It is more meant as an example on how you can create your
+own repositories in case <cite>generic</cite> is not enough for your needs.</p>
+<p>For example, in order to choose this repository you have to indicate
+this in you ‘configuration.yaml’ file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repository</span><span class="p">:</span>
+  <span class="n">class</span><span class="p">:</span> <span class="n">Shyft</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">generic</span><span class="o">.</span><span class="n">Config</span>
+  <span class="n">params</span><span class="p">:</span>         <span class="c1"># add your own params here to initialize repository</span>
+</pre></div>
+</div>
+<p>As you can see, you can specify <em>any</em> class that is accessible in your
+Python installation by using the dotted naming convention
+(e.g. Shyft.orchestration2.generic.Config above).</p>
+<p>In general, the user is advised to use the generic repository by
+default and configure the ingestion of data from different
+repositories via a explicit specification.  For example, let’s suppose
+that you want to access the geo-located time series that Shyft needs
+for its simulations via NetCDF4 files, but this is not supported by
+the ‘generic’ repository.  In this case we are going to specify
+another repository in the ‘datasets.yaml’ config file.  Keep reading.</p>
+</div>
+<div class="section" id="the-repository-entries-in-datasets-yaml">
+<h4>The ‘repository’ entries in ‘datasets.yaml’<a class="headerlink" href="#the-repository-entries-in-datasets-yaml" title="Permalink to this headline"></a></h4>
+<p>This entry makes possible to declare repository classes for dealing
+with different sources and destinations for geo-located time-series.
+Let’s see an example extracted from the ‘datasets.yaml’ for the
+<cite>netcdf</cite> sub-package (included in Shyft):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sources</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">repository</span><span class="p">:</span> <span class="n">source_repo1</span>
+    <span class="n">class</span><span class="p">:</span> <span class="n">Shyft</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">netcdf</span><span class="o">.</span><span class="n">SourceDataset</span>
+    <span class="n">params</span><span class="p">:</span>
+      <span class="n">stations_met</span><span class="p">:</span> <span class="n">stations_met</span><span class="o">.</span><span class="n">nc</span>
+      <span class="n">types</span><span class="p">:</span>
+        <span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="n">precipitation</span>
+          <span class="n">stations</span><span class="p">:</span>
+            <span class="o">-</span> <span class="n">values</span><span class="p">:</span> <span class="o">/</span><span class="n">station1</span><span class="o">/</span><span class="n">precipitation</span>
+              <span class="n">time</span><span class="p">:</span> <span class="o">/</span><span class="n">station1</span><span class="o">/</span><span class="n">time</span>
+              <span class="n">location</span><span class="p">:</span> <span class="o">/</span><span class="n">station1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="n">station1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">/</span><span class="n">station1</span><span class="o">.</span><span class="n">z</span>
+</pre></div>
+</div>
+<p>In this case we want to specify the datasets for the geo-located
+time-series sources, and for one of these sources (‘source_repo1’) we
+have specified that we want to use an instance of the
+<cite>Shyft.orchestration2.netcdf.SourceDataset</cite> class.  This class can be
+user defined, but must always inherit from
+<cite>Shyft.orchestration2.BaseSourceDataset</cite>.  Here we have the abstract
+interface for it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseSourceDataset</span><span class="p">(</span><span class="n">BaseConfigFiles</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Interface for SourceDataset objects.&quot;&quot;&quot;</span>
+    <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">fetch_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_source_types</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;`data` is a container for geo-located time-series that should be filled (appended).&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>so, basically you have to build a new class that provides the
+<cite>fetch_sources()</cite> method returning the geo-located time-series via the
+<cite>data</cite> dictionary of Shyft structures and based on the <cite>params</cite>
+parameter that is basically passing the location for the data.  For an
+implementation example just have a look at the sources of the
+<cite>Shyft.orchestration2.netcdf.SourceDataset</cite> class.</p>
+<p>The flexibility just described allows to declare different
+repositories for the dataset sources (hybrid sources).</p>
+<p>Of course, the same applies to the ‘destinations’ section of the
+‘dataset.yaml’ file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destinations</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">repository</span><span class="p">:</span>  <span class="n">dest_repo1</span>
+    <span class="n">class</span><span class="p">:</span> <span class="n">Shyft</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">netcdf</span><span class="o">.</span><span class="n">DestinationDataset</span>
+    <span class="n">params</span><span class="p">:</span>
+      <span class="n">simulated_Q</span><span class="p">:</span> <span class="n">netcdf</span><span class="p">:</span><span class="o">//</span><span class="n">simulation</span><span class="o">.</span><span class="n">nc</span><span class="o">/</span><span class="n">Q</span>
+      <span class="n">simulated_SWE</span><span class="p">:</span> <span class="n">netcdf</span><span class="p">:</span><span class="o">//</span><span class="n">simulation</span><span class="o">.</span><span class="n">nc</span><span class="o">/</span><span class="n">SWE</span>
+</pre></div>
+</div>
+<p>If you are interested in having your own repositories in a more
+general way than just specifying sources and destinations for
+geo-located time series, keep reading.</p>
+</div>
+<div class="section" id="the-repository-entry-in-configuration-yaml">
+<h4>The ‘repository’ entry in ‘configuration.yaml’<a class="headerlink" href="#the-repository-entry-in-configuration-yaml" title="Permalink to this headline"></a></h4>
+<p>This entry allows the user to replace the regular classes in Shyft that
+parse the configuration files by others.  It is important to note that
+this entry in ‘configuration.yaml’ is <strong>optional</strong>, so if you don’t
+provide a ‘repository’ the default parser classes will be used.</p>
+<p>Here we have an example of the main <em>bootstrap</em> way for specifying a
+repository in the main ‘configuration.yaml’ file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repository</span><span class="p">:</span>
+  <span class="n">class</span><span class="p">:</span> <span class="n">Shyft</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">netcdf</span><span class="o">.</span><span class="n">Config</span>
+  <span class="n">params</span><span class="p">:</span>         <span class="c1"># add your own params here to initialize repository</span>
+</pre></div>
+</div>
+<p>Please note that we have replaced the standard <cite>generic</cite> repository
+by another one, in this case <cite>netcdf</cite>.</p>
+<p>Here there is a ‘repository’ section where you can specify a Python
+class (‘class’) and some additional ‘params’ for the class
+constructor (<cite>__init__()</cite> method).  In this case, we see that the
+‘class’ entry is specifying the full path to the desired class.  The
+orchestration code is then responsible to import the class
+appropriately, and in this case it does that as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Shyft.repository.netcdf</span> <span class="kn">import</span> <span class="n">Config</span>
+</pre></div>
+</div>
+<p>so that means that literally any class installed in your computer can
+be imported and used inside the <cite>generic</cite> orchestration
+infrastructure.  The only limitation is that your class must inherit
+from <cite>BaseConfig</cite> ABC class which defines the interface to implement.
+Here it is an example of the implementation for the <cite>netcdf</cite>
+repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Shyft.orchestration2.base_config</span> <span class="kn">import</span> <span class="n">BaseConfig</span>
+<span class="kn">from</span> <span class="nn">.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">.region</span> <span class="kn">import</span> <span class="n">Region</span>
+<span class="kn">from</span> <span class="nn">.datasets</span> <span class="kn">import</span> <span class="n">Datasets</span>
+
+<span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">BaseConfig</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main class hosting a complete configuration section for an Shyft run.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">region_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;_region_config&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_region_config</span> <span class="o">=</span> <span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region_config_file</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_region_config</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">model_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;_model_config&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_model_config</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_config_file</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_config</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">datasets_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;_datasets_config&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_datasets_config</span> <span class="o">=</span> <span class="n">Datasets</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datasets_config_file</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets_config</span>
+
+    <span class="k">def</span> <span class="nf">process_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="c1"># No additional params yet for the reference</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>So, basically, one must define some properties returning instances
+that deal with the different configuration files.  Each of these
+instances must inherit from ABC classes (interfaces).  For example,
+<cite>region_config</cite> returns a sub-instance of
+<cite>Shyft.orchestration2.BaseRegion</cite>, <cite>model_config</cite> returns a sub-instance
+of <cite>Shyft.orchestration2.BaseModel</cite> and <cite>datasets</cite> returns an instance
+of <cite>Shyft.orchestration2.BaseDatasets</cite>.  Note that you don’t need to
+come up with your own tailored implementation for parsing every config
+files, and you may choose to stay with the generic one.</p>
+<p>Also, one needs to define the <cite>process_params</cite> method for handling the
+different values in the ‘params’ section of the ‘repository’ entry.
+As the <cite>netcdf</cite> repo does not need any additional parameter, it is
+declared as empty above.</p>
+<p>This is an easy way to produce your own repositories while you are
+still enforced to implement the interfaces that Shyft requires.</p>
+<dl class="simple">
+<dt><strong>Advice:</strong> If you need to produce your own repository start by</dt><dd><p>cloning an existing one (e.g. <cite>netcdf</cite>) and adapting the code to your
+needs.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"></a></h2>
+<p>Shyft let’s you specify two different level of customization for
+configuring and passing time-series to Shyft:</p>
+<ul class="simple">
+<li><p>Customize the read (sources) and write (destinations) of geo-located
+time series.</p></li>
+<li><p>Customize the treatment of configuration files (more complex, but
+doable).</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-a-repository">
+<h2>What is a repository?<a class="headerlink" href="#what-is-a-repository" title="Permalink to this headline"></a></h2>
+<p>A repository in Shyft context provides a minimal interface to a service, that can be used to compose and
+orchestrate functionality as required by the business. It typically hides a way non-essential details for
+the user, e.g. how information/things are stored/retrieved from backing services and storage layers.</p>
+<p>Parameters and responses of a repository interfaces are either basic types like int,string, or domain-objects
+that can directly be used by the calling code.</p>
+</div>
+<div class="section" id="configuring-shyft">
+<h2>Configuring Shyft<a class="headerlink" href="#configuring-shyft" title="Permalink to this headline"></a></h2>
+<p>Shyft is configured via <a class="reference external" href="http://yaml.org/">YAML files</a>.  Here it is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">Himalayas</span><span class="p">:</span>
+  <span class="n">config_dir</span><span class="p">:</span> <span class="o">.</span>     <span class="c1"># where to find other config files</span>
+  <span class="n">region_config</span><span class="p">:</span> <span class="n">region</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="n">model_config</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="c1"># model_config: calibrated_model.yaml</span>
+  <span class="n">datasets_config</span><span class="p">:</span> <span class="n">datasets</span><span class="o">.</span><span class="n">yaml</span>
+  <span class="n">start_datetime</span><span class="p">:</span> <span class="mi">1990</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">01</span><span class="n">T00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+  <span class="n">run_time_step</span><span class="p">:</span> <span class="mi">86400</span>
+  <span class="n">number_of_steps</span><span class="p">:</span> <span class="mi">730</span>
+  <span class="n">max_cells</span><span class="p">:</span> <span class="mi">4</span>  <span class="c1"># consider only a maximum of cells (optional, mainly for testing purposes)</span>
+  <span class="n">output</span><span class="p">:</span>
+    <span class="n">params</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">total_discharge</span>
+      <span class="o">-</span> <span class="n">discharge</span>
+      <span class="o">-</span> <span class="n">snow_storage</span>
+      <span class="o">-</span> <span class="n">temperature</span>
+      <span class="o">-</span> <span class="n">precipitation</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="n">netcdf</span>
+    <span class="n">nc_dir</span><span class="p">:</span> <span class="o">.</span>   <span class="c1"># dir where the output file will be stored</span>
+    <span class="n">file</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">nc</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Package shyft" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Shyft project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

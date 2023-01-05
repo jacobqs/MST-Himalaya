@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeSeries &mdash; Documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/bootstrap-grid.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../../_static/js/bootstrap.min.js"></script>
+        <script src="../../../_static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../_static/js/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Distributed Time Series (DTS)" href="dts.html" />
+    <link rel="prev" title="TimeAxis" href="time_axis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Shyft
+          </a>
+              <div class="version">
+                4.12
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../project/what_is_shyft.html">What is Shyft?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/get_involved.html">Get involved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/contact.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Time Series</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Concepts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../getting_started.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_axis.html">TimeAxis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TimeSeries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#time-series-types">Time series types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#point-instant-value"><code class="docutils literal notranslate"><span class="pre">POINT_INSTANT_VALUE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#point-average-value"><code class="docutils literal notranslate"><span class="pre">POINT_AVERAGE_VALUE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inspection-functions">Inspection functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#timeseries-t-int-float-time">TimeSeries(t: int/float/time)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#point-interpretation">point_interpretation()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#size">size()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-axis">time_axis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#values-to-numpy">values.to_numpy()</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#general-time-series-manipulation">General time series manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arithmetics">Arithmetics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mathematical-operations">Mathematical operations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#average">Average</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#accumulate">Accumulate</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#derivative">Derivative</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#integral">Integral</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#statistics">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#utility-functions">Utility functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#inside">Inside</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#max-min">Max/min</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#time-shift">Time shift</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dts.html">Distributed Time Series (DTS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks.html">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hydrology</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../hydrology/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hydrology/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hydrology/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hydrology/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Energy Market</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../energy_market/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../energy_market/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../energy_market/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../energy_market/api.html">API Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Dashboard</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard/api.html">API Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Shyft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../getting_started.html">Getting started</a> &raquo;</li>
+      <li>TimeSeries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/content/time_series/getting_started/time_series.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="timeseries">
+<span id="usagetimeseries"></span><h1>TimeSeries<a class="headerlink" href="#timeseries" title="Permalink to this headline"></a></h1>
+<p>After the successful creation of a <a class="reference internal" href="time_axis.html#usagetimeaxis"><span class="std std-ref">TimeAxis</span></a>, a Shyft <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> can be
+instantiated. In Shyft we see the <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> as a function that can be evaluated at any time
+point <code class="docutils literal notranslate"><span class="pre">f(t)</span></code>. If we evaluate the <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> outside of any interval we have set it will
+return <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. Inside defined intervals it will interpolate between values, how it will
+be interpolated will depend on what type of <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> we use.</p>
+<p>A time series can be instantiated by giving a <code class="docutils literal notranslate"><span class="pre">TimeAxis</span></code>, <code class="docutils literal notranslate"><span class="pre">ta</span></code>, a set of values, <code class="docutils literal notranslate"><span class="pre">values</span></code>,
+and the point intepretation, <code class="docutils literal notranslate"><span class="pre">point_fx</span></code>, you want the time series to have.
+The available point interpretations are <code class="docutils literal notranslate"><span class="pre">POINT_INSTANT_VALUE</span></code> and <code class="docutils literal notranslate"><span class="pre">POINT_AVERAGE_VALUE</span></code>.
+These are available in <code class="docutils literal notranslate"><span class="pre">shyft.time_series.point_interpretation_policy</span></code>.</p>
+<div class="section" id="time-series-types">
+<h2>Time series types<a class="headerlink" href="#time-series-types" title="Permalink to this headline"></a></h2>
+<div class="section" id="point-instant-value">
+<h3><code class="docutils literal notranslate"><span class="pre">POINT_INSTANT_VALUE</span></code><a class="headerlink" href="#point-instant-value" title="Permalink to this headline"></a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">POINT_INSTANT_VALUE</span></code> is a time series where a value is linearly interpolated between
+the start and end points of each interval.
+So if we create a 4 interval time axis and input the values <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">4]</span></code> as shown below</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shyft.time_series</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">TimeSeries</span><span class="p">,</span> <span class="n">TimeAxis</span><span class="p">,</span> <span class="n">Calendar</span><span class="p">,</span> <span class="n">point_interpretation_policy</span>
+<span class="p">)</span>
+
+<span class="n">ta</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">ts_instant</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span>
+        <span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">point_fx</span><span class="o">=</span><span class="n">point_interpretation_policy</span><span class="o">.</span><span class="n">POINT_INSTANT_VALUE</span>
+        <span class="p">)</span> 
+</pre></div>
+</div>
+<p>it will produce a time series on the form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>            <span class="n">t3_____t4</span>
+      <span class="n">t1</span>     <span class="o">/</span>
+      <span class="o">/</span>\    <span class="o">/</span>
+     <span class="o">/</span>  \  <span class="o">/</span>
+    <span class="o">/</span>    \<span class="o">/</span>
+<span class="n">t0</span> <span class="o">/</span>     <span class="n">t2</span>
+</pre></div>
+</div>
+<p>and evaluating the time series at different time points we can see how it
+interpolates between the points.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts_instant</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>    <span class="c1"># 0.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_instant</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>    <span class="c1"># 3.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_instant</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>  <span class="c1"># 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_instant</span><span class="p">(</span><span class="mf">3.5</span><span class="p">))</span>  <span class="c1"># 4.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_instant</span><span class="p">(</span><span class="mf">4.0</span><span class="p">))</span>  <span class="c1"># nan</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Worth noticing is that in the last time interval it extrapolates the last value
+as a straight line since it does not have a last value to interpolate to.</p>
+</div>
+</div>
+<div class="section" id="point-average-value">
+<h3><code class="docutils literal notranslate"><span class="pre">POINT_AVERAGE_VALUE</span></code><a class="headerlink" href="#point-average-value" title="Permalink to this headline"></a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">POINT_AVERAGE_VALUE</span></code> is a time series type where the whole interval has
+the same value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ts_average</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span>
+        <span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">point_fx</span><span class="o">=</span><span class="n">point_interpretation_policy</span><span class="o">.</span><span class="n">POINT_AVERAGE_VALUE</span>
+        <span class="p">)</span> 
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>               <span class="n">t3______t4</span>
+     <span class="n">t1_____</span>    <span class="o">|</span>
+       <span class="o">|</span>   <span class="o">|</span>    <span class="o">|</span>
+       <span class="o">|</span>   <span class="o">|</span>    <span class="o">|</span>
+       <span class="o">|</span>   <span class="o">|</span><span class="n">____</span><span class="o">|</span>
+<span class="n">t0_____</span><span class="o">|</span>   <span class="n">t2</span>
+</pre></div>
+</div>
+<p>And evaluating the average time series at the same points as the instant series
+shows the differences between their interpolation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts_average</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>    <span class="c1"># 0.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_average</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>    <span class="c1"># 3.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_average</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>  <span class="c1"># 3.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_average</span><span class="p">(</span><span class="mf">3.5</span><span class="p">))</span>  <span class="c1"># 4.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_average</span><span class="p">(</span><span class="mf">4.0</span><span class="p">))</span>  <span class="c1"># nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inspection-functions">
+<h2>Inspection functions<a class="headerlink" href="#inspection-functions" title="Permalink to this headline"></a></h2>
+<p>To inspect the time series there exists a few utility functions we should
+know about.</p>
+<div class="section" id="timeseries-t-int-float-time">
+<h3>TimeSeries(t: int/float/time)<a class="headerlink" href="#timeseries-t-int-float-time" title="Permalink to this headline"></a></h3>
+<p>If we call the time series with an <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> or <code class="docutils literal notranslate"><span class="pre">time</span></code> object it will
+evaluate itself on the specific time point and return the value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span>
+        <span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">point_fx</span><span class="o">=</span><span class="n">point_interpretation_policy</span><span class="o">.</span><span class="n">POINT_AVERAGE_VALUE</span>
+        <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 3.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="point-interpretation">
+<h3>point_interpretation()<a class="headerlink" href="#point-interpretation" title="Permalink to this headline"></a></h3>
+<p>Returns the point interpretation of the time series.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">point_interpretation</span><span class="p">())</span> <span class="c1"># POINT_AVERAGE_VALUE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="size">
+<h3>size()<a class="headerlink" href="#size" title="Permalink to this headline"></a></h3>
+<p>Returns the number of intervals in the time series</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-axis">
+<h3>time_axis<a class="headerlink" href="#time-axis" title="Permalink to this headline"></a></h3>
+<p>Returns the time axis of the time series</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">time_axis</span><span class="p">)</span> <span class="c1"># TimeAxis(&#39;1970-01-01T00:00:00Z&#39;, 1s, 4)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="values-to-numpy">
+<h3>values.to_numpy()<a class="headerlink" href="#values-to-numpy" title="Permalink to this headline"></a></h3>
+<p>Returns a numpy array with the values it was set up with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span> <span class="c1"># [0. 3. 1. 4.]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="general-time-series-manipulation">
+<h2>General time series manipulation<a class="headerlink" href="#general-time-series-manipulation" title="Permalink to this headline"></a></h2>
+<p>For a comprehensive list of available functions see <a class="reference internal" href="../api.html#shyft.time_series.TimeSeries" title="shyft.time_series.TimeSeries"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shyft.time_series.TimeSeries()</span></code></a>.
+The time series in Shyft are thought of as mathematical expressions and not indexed values.
+This makes the manipulation of time series a bit different than with numpy arrays or pandas series.
+We set up some convenience functions to inspect the time series.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shyft.time_series</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">time</span><span class="p">,</span> <span class="n">TimeSeries</span><span class="p">,</span> <span class="n">TimeAxis</span><span class="p">,</span> <span class="n">POINT_AVERAGE_VALUE</span> <span class="k">as</span> <span class="n">stair_case</span><span class="p">,</span>
+        <span class="n">POINT_INSTANT_VALUE</span> <span class="k">as</span> <span class="n">linear</span><span class="p">,</span> <span class="n">Calendar</span><span class="p">,</span>
+        <span class="n">FORWARD</span> <span class="k">as</span> <span class="n">d_forward</span><span class="p">,</span> <span class="n">BACKWARD</span> <span class="k">as</span> <span class="n">d_backward</span><span class="p">,</span> <span class="n">CENTER</span> <span class="k">as</span> <span class="n">d_center</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">show_values</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ts</span><span class="p">:</span> <span class="n">TimeSeries</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">:</span><span class="se">\n</span><span class="s1"> </span><span class="si">{</span><span class="n">ts</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="arithmetics">
+<h3>Arithmetics<a class="headerlink" href="#arithmetics" title="Permalink to this headline"></a></h3>
+<p>Doing basic arithmetics with time series is as simple as with numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">HOUR</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">3600</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
+
+<span class="n">ta</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">(</span><span class="s1">&#39;2021-01-01T00:00:00Z&#39;</span><span class="p">),</span> <span class="n">delta_t</span><span class="o">=</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">stair_case</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Initial TimeSeries&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<span class="c1"># Initial TimeSeries:</span>
+<span class="c1"># [ 0.  1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14. 15. 16. 17.</span>
+<span class="c1"># 18. 19. 20. 21. 22. 23.]</span>
+
+<span class="n">ts_addition</span> <span class="o">=</span> <span class="n">ts</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">ts_multiplication</span> <span class="o">=</span> <span class="n">ts</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;TimeSeries + 2&#39;</span><span class="p">,</span> <span class="n">ts_addition</span><span class="p">)</span>
+<span class="c1">#TimeSeries + 2:</span>
+<span class="c1"># [ 2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14. 15. 16. 17. 18. 19.</span>
+<span class="c1"># 20. 21. 22. 23. 24. 25.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;TimeSeries*2&#39;</span><span class="p">,</span> <span class="n">ts_multiplication</span><span class="p">)</span>
+<span class="c1">#TimeSeries*2:</span>
+<span class="c1"># [ 0.  2.  4.  6.  8. 10. 12. 14. 16. 18. 20. 22. 24. 26. 28. 30. 32. 34.</span>
+<span class="c1"># 36. 38. 40. 42. 44. 46.]</span>
+</pre></div>
+</div>
+<p>We can also do the same arthmetic on two time series</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">values</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">ts_reversed</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">stair_case</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;TimeSeries + TimeSeries&#39;</span><span class="p">,</span> <span class="n">ts</span> <span class="o">+</span> <span class="n">ts_reversed</span><span class="p">)</span>
+<span class="c1">#TimeSeries + TimeSeries:</span>
+<span class="c1"># [23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23. 23.</span>
+<span class="c1"># 23. 23. 23. 23. 23. 23.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;TimeSeries*TimeSeries&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">*</span><span class="n">ts_reversed</span><span class="p">)</span>
+<span class="c1">#TimeSeries*TimeSeries:</span>
+<span class="c1"># [  0.  22.  42.  60.  76.  90. 102. 112. 120. 126. 130. 132. 132. 130.</span>
+<span class="c1"># 126. 120. 112. 102.  90.  76.  60.  42.  22.   0.]</span>
+</pre></div>
+</div>
+<p>One thing to notice when we do arithmetics on time series is if they have different
+time axis. So if we for example have two time series with partial overlap in time,
+only overlapping time intervals will be defined.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">values</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">ta1</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">(</span><span class="s1">&#39;2021-01-01T00:00:00Z&#39;</span><span class="p">),</span> <span class="n">delta_t</span><span class="o">=</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+<span class="c1"># time axis shifted 12 hours</span>
+<span class="n">ta2</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">(</span><span class="s1">&#39;2021-01-01T12:00:00Z&#39;</span><span class="p">),</span> <span class="n">delta_t</span><span class="o">=</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+
+<span class="n">ts1</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta1</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">stair_case</span><span class="p">)</span>
+<span class="n">ts2</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta2</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">stair_case</span><span class="p">)</span>
+<span class="n">ts_addition</span> <span class="o">=</span> <span class="n">ts1</span> <span class="o">+</span> <span class="n">ts2</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;TimeSeries.time_axis1 + TimeSeries.time_axis2&#39;</span><span class="p">,</span> <span class="n">ts_addition</span><span class="p">)</span>
+<span class="c1">#TimeSeries.time_axis1 + TimeSeries.time_axis2:</span>
+<span class="c1"># [12. 14. 16. 18. 20. 22. 24. 26. 28. 30. 32. 34.]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;t&quot;</span><span class="si">:</span><span class="s1">15</span><span class="si">}{</span><span class="s2">&quot;ts1&quot;</span><span class="si">:</span><span class="s1">10</span><span class="si">}{</span><span class="s2">&quot;ts2&quot;</span><span class="si">:</span><span class="s1">10</span><span class="si">}{</span><span class="s2">&quot;ts1 + ts2&quot;</span><span class="si">:</span><span class="s1">10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ta1</span><span class="o">.</span><span class="n">time_points</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ta2</span><span class="o">.</span><span class="n">time_points</span><span class="p">)))):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">&lt;15</span><span class="si">}{</span><span class="n">ts1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">:</span><span class="s1">&lt;10</span><span class="si">}{</span><span class="n">ts2</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">:</span><span class="s1">&lt;10</span><span class="si">}{</span><span class="n">ts_addition</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="si">:</span><span class="s1">&lt;10</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1">#t              ts1       ts2       ts1 + ts2 </span>
+<span class="c1">#1609459200     0.0       nan       nan       </span>
+<span class="c1">#1609462800     1.0       nan       nan       </span>
+<span class="c1">#1609466400     2.0       nan       nan       </span>
+<span class="c1">#1609470000     3.0       nan       nan       </span>
+<span class="c1">#1609473600     4.0       nan       nan       </span>
+<span class="c1">#1609477200     5.0       nan       nan       </span>
+<span class="c1">#1609480800     6.0       nan       nan       </span>
+<span class="c1">#1609484400     7.0       nan       nan       </span>
+<span class="c1">#1609488000     8.0       nan       nan       </span>
+<span class="c1">#1609491600     9.0       nan       nan       </span>
+<span class="c1">#1609495200     10.0      nan       nan       </span>
+<span class="c1">#1609498800     11.0      nan       nan       </span>
+<span class="c1">#1609502400     12.0      0.0       12.0      </span>
+<span class="c1">#1609506000     13.0      1.0       14.0      </span>
+<span class="c1">#1609509600     14.0      2.0       16.0      </span>
+<span class="c1">#1609513200     15.0      3.0       18.0      </span>
+<span class="c1">#1609516800     16.0      4.0       20.0      </span>
+<span class="c1">#1609520400     17.0      5.0       22.0      </span>
+<span class="c1">#1609524000     18.0      6.0       24.0      </span>
+<span class="c1">#1609527600     19.0      7.0       26.0      </span>
+<span class="c1">#1609531200     20.0      8.0       28.0      </span>
+<span class="c1">#1609534800     21.0      9.0       30.0      </span>
+<span class="c1">#1609538400     22.0      10.0      32.0      </span>
+<span class="c1">#1609542000     23.0      11.0      34.0      </span>
+<span class="c1">#1609545600     nan       12.0      nan       </span>
+<span class="c1">#1609549200     nan       13.0      nan       </span>
+<span class="c1">#1609552800     nan       14.0      nan       </span>
+<span class="c1">#1609556400     nan       15.0      nan       </span>
+<span class="c1">#1609560000     nan       16.0      nan       </span>
+<span class="c1">#1609563600     nan       17.0      nan       </span>
+<span class="c1">#1609567200     nan       18.0      nan       </span>
+<span class="c1">#1609570800     nan       19.0      nan       </span>
+<span class="c1">#1609574400     nan       20.0      nan       </span>
+<span class="c1">#1609578000     nan       21.0      nan       </span>
+<span class="c1">#1609581600     nan       22.0      nan       </span>
+<span class="c1">#1609585200     nan       23.0      nan       </span>
+<span class="c1">#1609588800     nan       nan       nan       </span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">ts2</span></code> is not defined in the intervals 1 to 11, the resulting time series
+will not be defined in that period either. The same goes for where <code class="docutils literal notranslate"><span class="pre">ts1</span></code> is not defined.</p>
+</div>
+<div class="section" id="mathematical-operations">
+<h3>Mathematical operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline"></a></h3>
+<p>There are many built-in functions to help with manipulating time series in Shyft. These examples are
+not exhaustive, so please refer to the documentation on <a class="reference internal" href="../api.html#shyft.time_series.TimeSeries" title="shyft.time_series.TimeSeries"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shyft.time_series.TimeSeries()</span></code></a> for a complete
+list.</p>
+<div class="section" id="average">
+<h4>Average<a class="headerlink" href="#average" title="Permalink to this headline"></a></h4>
+<p>The average function takes only one argument, and that is a time axis. It then calculates
+the true average over that time axis. We create two time axis, both with a period of a week,
+but one with daily resolution and one with hourly resolution. Then we create two hourly time series,
+one stair case and one linear, with linearly increasing values. After that we average both of them
+with the daily time axis.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\bar{f}(T) &amp;= \frac{1}{n}\sum_{t=T_{\text{start}}}^{T_{\text{end}}} f(t) &amp;&amp;\text{if } f(t) \neq NaN\\
+\text{where}&amp;\\
+T &amp;= \text{period to average over}\\
+n &amp;= \text{number of non-NaN points in period}\\
+\end{align*}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="s1">&#39;2021-01-01T00:00:00Z&#39;</span><span class="p">)</span>
+<span class="n">ta_hourly</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">t0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">24</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">ta_daily</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">t0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="mi">24</span><span class="o">*</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ta_hourly</span><span class="o">.</span><span class="n">size</span><span class="p">())]</span>
+<span class="n">ts_stairs</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_hourly</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">stair_case</span><span class="p">)</span>
+<span class="n">ts_linear</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_hourly</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">linear</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Original stairs&#39;</span><span class="p">,</span> <span class="n">ts_stairs</span><span class="p">)</span>
+<span class="c1">#Original stairs:</span>
+<span class="c1"># [  0.   1.   2.   3.   4. ... 163. 164. 165. 166. 167.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Original linear&#39;</span><span class="p">,</span> <span class="n">ts_linear</span><span class="p">)</span>
+<span class="c1">#Original linear:</span>
+<span class="c1"># [  0.   1.   2.   3.   4. ... 163. 164. 165. 166. 167.]</span>
+
+<span class="n">ts_stairs_avg</span> <span class="o">=</span> <span class="n">ts_stairs</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ta_daily</span><span class="p">)</span>
+<span class="n">ts_linear_avg</span> <span class="o">=</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ta_daily</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily stairs average&#39;</span><span class="p">,</span> <span class="n">ts_stairs_avg</span><span class="p">)</span>
+<span class="c1">#Daily stairs average:</span>
+<span class="c1"># [ 11.5  35.5  59.5  83.5 107.5 131.5 155.5]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily linear average&#39;</span><span class="p">,</span> <span class="n">ts_linear_avg</span><span class="p">)</span>
+<span class="c1">#Daily linear average:</span>
+<span class="c1"># [ 12.   36.   60.   84.  108.  132.  155.5]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The point interpretation of a time series that is created from an averaging will always be
+a stair case series</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Point interpretation of ts_stairs_avg: </span><span class="si">{</span><span class="n">ts_stairs_avg</span><span class="o">.</span><span class="n">point_interpretation</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+      <span class="sa">f</span><span class="s1">&#39;Point interpratation of ts_linear_avg: </span><span class="si">{</span><span class="n">ts_linear_avg</span><span class="o">.</span><span class="n">point_interpretation</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1">#Point interpretation of ts_stairs_avg: POINT_AVERAGE_VALUE</span>
+<span class="c1">#Point interpratation of ts_linear_avg: POINT_AVERAGE_VALUE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accumulate">
+<h4>Accumulate<a class="headerlink" href="#accumulate" title="Permalink to this headline"></a></h4>
+<p>Accumulate takes a time axis as input and returns a new time series where the i’th value
+is the integral from <code class="docutils literal notranslate"><span class="pre">t0</span></code> to <code class="docutils literal notranslate"><span class="pre">ti</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+TS(t_i) &amp;= \int_{t=t_0}^{t=t_i}ts(t)dt\\
+\text{where}&amp;\\
+TS &amp;= \text{Accumulated time series}\\
+ts &amp;= \text{original time series}\\
+\end{align*}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ts_linear_hourly_acc</span> <span class="o">=</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">ta_hourly</span><span class="p">)</span>
+<span class="n">ts_linear_daily_acc</span> <span class="o">=</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">ta_daily</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Hourly accumulation&#39;</span><span class="p">,</span> <span class="n">ts_linear_hourly_acc</span><span class="o">/</span><span class="n">HOUR</span><span class="p">)</span>
+<span class="c1">#Hourly accumulation::</span>
+<span class="c1"># [0.00 0.50 2.00 4.50 8.00 12.50</span>
+<span class="c1">#  ... </span>
+<span class="c1">#  13122.0 13284.5 13448.0 13612.5 13778.0 13944.5]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily accumulation&#39;</span><span class="p">,</span> <span class="n">ts_linear_daily_acc</span><span class="o">/</span><span class="p">(</span><span class="n">HOUR</span><span class="o">*</span><span class="mi">24</span><span class="p">))</span>
+<span class="c1">#Daily accumulation::</span>
+<span class="c1"># [  0.  12.  48. 108. 192. 300. 432.]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Integral operations on shyft time series are done with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> of seconds, which means
+we have to divide by the <code class="docutils literal notranslate"><span class="pre">dt</span></code> of the time axis we accumulate over</p>
+</div>
+</div>
+<div class="section" id="derivative">
+<h4>Derivative<a class="headerlink" href="#derivative" title="Permalink to this headline"></a></h4>
+<p>We can derivate a time series forwards, backwards or center. As with accumulate the operations
+happen on second resolution and therefore we need to multiply by the <code class="docutils literal notranslate"><span class="pre">dt</span></code> of the time axis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily derivative forward&#39;</span><span class="p">,</span> <span class="n">ts_stairs_avg</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">d_forward</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">HOUR</span><span class="o">*</span><span class="mi">24</span><span class="p">))</span>
+<span class="c1">#Daily derivative forward:</span>
+<span class="c1"># [24. 24. 24. 24. 24. 24.  0.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily derivative backward&#39;</span><span class="p">,</span> <span class="n">ts_stairs_avg</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">d_backward</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">HOUR</span><span class="o">*</span><span class="mi">24</span><span class="p">))</span>
+<span class="c1">#Daily derivative backward:</span>
+<span class="c1"># [ 0. 24. 24. 24. 24. 24. 24.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily derivative center&#39;</span><span class="p">,</span> <span class="n">ts_stairs_avg</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">d_center</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">HOUR</span><span class="o">*</span><span class="mi">24</span><span class="p">))</span>
+<span class="c1">#Daily derivative center:</span>
+<span class="c1"># [12. 24. 24. 24. 24. 24. 12.]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integral">
+<h4>Integral<a class="headerlink" href="#integral" title="Permalink to this headline"></a></h4>
+<p>We can integrate a time series over a specified time axis.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+TS(T) &amp;= \int_{t=T_{\text{start}}}^{T_{\text{end}}}ts(t)dt &amp;&amp;\text{if } ts(t) \neq NaN\\
+\text{where}&amp;\\
+TS &amp;= \text{integrated time series}\\
+ts &amp;= \text{original time series}\\
+T &amp;= \text{period to integrate over}\\
+\end{align*}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily integral&#39;</span><span class="p">,</span> <span class="n">ts_stairs</span><span class="o">.</span><span class="n">integral</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_daily</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">HOUR</span><span class="o">*</span><span class="mi">24</span><span class="p">))</span>
+<span class="c1">#Daily integral:</span>
+<span class="c1"># [ 11.5  35.5  59.5  83.5 107.5 131.5 155.5]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="statistics">
+<h4>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline"></a></h4>
+<p>With the statistics function we can directly get the different percentiles over a specified
+time axis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily 10 percentile&#39;</span><span class="p">,</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">statistics</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_daily</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#Daily 10 percentile:</span>
+<span class="c1"># [  2.3  26.3  50.3  74.3  98.3 122.3 146.3]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily 50 percentile&#39;</span><span class="p">,</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">statistics</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_daily</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+<span class="c1">#Daily 50 percentile:</span>
+<span class="c1"># [ 11.5  35.5  59.5  83.5 107.5 131.5 155.5]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Daily 90 percentile&#39;</span><span class="p">,</span> <span class="n">ts_linear</span><span class="o">.</span><span class="n">statistics</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta_daily</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">90</span><span class="p">))</span>
+<span class="c1">#Daily 90 percentile:</span>
+<span class="c1"># [ 20.7  44.7  68.7  92.7 116.7 140.7 164.7]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utility-functions">
+<h3>Utility functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline"></a></h3>
+<p>Here is a small collection of helpful functions when manipulating or extracting information
+from time series.</p>
+<div class="section" id="inside">
+<h4>Inside<a class="headerlink" href="#inside" title="Permalink to this headline"></a></h4>
+<p>This function creates a new time series with values where it is either inside or outside a
+defined range. We can set the minimum and maximum value of the range, the value it should use where
+it  meets <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, and also the values to set where it is inside or outside the range.
+By default <code class="docutils literal notranslate"><span class="pre">NaN</span></code> will continue to be <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, inside range will be 1 and outside range 0.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+TS(t) =
+\begin{cases}
+1, &amp;\text{if } \text{min_v} \leq ts(t) \lt \text{max_v}\\
+0 &amp;\text{otherwise}
+\end{cases}
+\end{equation*}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="s1">&#39;2021-01-01T00:00:00Z&#39;</span><span class="p">)</span>
+<span class="n">ta</span> <span class="o">=</span> <span class="n">TimeAxis</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">t0</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="n">HOUR</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ta</span><span class="o">.</span><span class="n">size</span><span class="p">())]</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">TimeSeries</span><span class="p">(</span><span class="n">ta</span><span class="o">=</span><span class="n">ta</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">point_fx</span><span class="o">=</span><span class="n">linear</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Smaller than 50&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">min_v</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">),</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+<span class="c1">#Smaller than 50:</span>
+<span class="c1"># [1. 1. 1. 1. 1. 0. 0. 0. 0. 0.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Larger than 50&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">min_v</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)))</span>
+<span class="c1">#Larger than 50:</span>
+<span class="c1"># [0. 0. 0. 0. 0. 1. 1. 1. 1. 1.]</span>
+</pre></div>
+</div>
+<p>To have no upper or lower limit we set the <code class="docutils literal notranslate"><span class="pre">min_v</span></code> or <code class="docutils literal notranslate"><span class="pre">max_v</span></code> to <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Between 25 and 65&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">min_v</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">inside_v</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">outside_v</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="c1">#Between 25 and 65:</span>
+<span class="c1"># [20. 20. 20. 10. 10. 10. 10. 20. 20. 20.]</span>
+</pre></div>
+</div>
+<p>Here we check if values are inside the range 25-65 and set map inside values to 10 and outside values
+to 20.</p>
+</div>
+<div class="section" id="max-min">
+<h4>Max/min<a class="headerlink" href="#max-min" title="Permalink to this headline"></a></h4>
+<p>These function returns a new time series with filled in values of whichever value that is
+maximum/minimum of the input value or value in the time series.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+max_v = 10\\
+TS(t) =
+\begin{cases}
+10, &amp;\text{if } ts(t) \leq 10\\
+ts(t) &amp;\text{if } ts(t) \gt 10
+\end{cases}
+\end{equation*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+min_v = 10\\
+TS(t) =
+\begin{cases}
+ts(t), &amp;\text{if } ts(t) \leq 10\\
+10 &amp;\text{if } ts(t) \gt 10
+\end{cases}
+\end{equation*}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Max of 40&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">40</span><span class="p">))</span>
+<span class="c1">#Max of 40:</span>
+<span class="c1"># [40. 40. 40. 40. 40. 50. 60. 70. 80. 90.]</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Min of 40&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">40</span><span class="p">))</span>
+<span class="c1">#Min of 40:</span>
+<span class="c1"># [ 0. 10. 20. 30. 40. 40. 40. 40. 40. 40.]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-shift">
+<h4>Time shift<a class="headerlink" href="#time-shift" title="Permalink to this headline"></a></h4>
+<p>This function shifts the values forward or backward in time on the basis of a <code class="docutils literal notranslate"><span class="pre">dt</span></code>.
+It moves forward for positive time step and backwards for negative time step.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ts_hour_shift</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">time_shift</span><span class="p">(</span><span class="n">HOUR</span><span class="p">)</span>
+
+<span class="n">show_values</span><span class="p">(</span><span class="s1">&#39;Shifted time series&#39;</span><span class="p">,</span> <span class="n">ts_hour_shift</span><span class="p">)</span>
+<span class="c1">#Shifted time series:</span>
+<span class="c1"># [ 0. 10. 20. 30. 40. 50. 60. 70. 80. 90.]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">time_axis</span><span class="p">)</span>
+<span class="c1">#TimeAxis(&#39;2021-01-01T00:00:00Z&#39;, 3600s, 10)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ts_hour_shift</span><span class="o">.</span><span class="n">time_axis</span><span class="p">)</span>
+<span class="c1">#TimeAxis(&#39;2021-01-01T01:00:00Z&#39;, 3600s, 10)</span>
+</pre></div>
+</div>
+<p>As we can see here the values stay the same, but the time axis has been shifted an hour forward.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="time_axis.html" class="btn btn-neutral float-left" title="TimeAxis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dts.html" class="btn btn-neutral float-right" title="Distributed Time Series (DTS)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Shyft project.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
