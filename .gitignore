@@ -1,4 +1,8 @@
 # Files or folders to ignore
 
-
+shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/radiation.nc
+shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/relative_humidity.nc
+shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/temperature.nc
+shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/tin_cell_data.nc
+shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/wind_speed.nc
 
