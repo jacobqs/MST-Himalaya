@@ -27,11 +27,11 @@ c = cdsapi.Client()
 
 variables = [#'near_surface_specific_humidity', 
             #'grid_point_altitude', 
-            #'near_surface_air_temperature', 
+            'near_surface_air_temperature', 
             #'near_surface_specific_humidity', 
             #'near_surface_wind_speed', 
-            'rainfall_flux', 
-            'snowfall_flux', 
+            #'rainfall_flux', 
+            #'snowfall_flux', 
             #'surface_air_pressure', 
            #'surface_downwelling_longwave_radiation',
            #'surface_downwelling_shortwave_radiation'
@@ -43,7 +43,7 @@ for variable in variables:
         {   'area': [north, west, south, east],
             'variable': f'{variable}',
             #cru_and_gpcc
-            'reference_dataset': 'cru_and_gpcc',
+            'reference_dataset': 'cru',
             'year': [
                 '1990', '1991', '1992',
                 '1993', '1994', '1995',

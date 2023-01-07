@@ -6,12 +6,12 @@ repository:
 
 domain:
   EPSG: 32645
-  nx: 9120
-  ny: 9120
+  nx: 144
+  ny: 144
   step_x: 1000
   step_y: 1000
-  lower_left_x: 97121.29406171688
-  lower_left_y: 381013.5445878378
+  lower_left_x: 73528.58823297377
+  lower_left_y: 2854878.42464918
 
 catchment_indices:
   - 1
