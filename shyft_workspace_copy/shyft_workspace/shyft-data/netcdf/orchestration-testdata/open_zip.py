@@ -6,7 +6,7 @@ years = []
 for i in range(1990,2020):
     years.append(str(i))
 
-variable_names = ['/precipitation/precipitation', 'temperature/temperature', 'rel_hum/rel_hum', 'radiation/radiation']
+variable_names = ['precipitation/precipitation', 'temperature/temperature', 'rel_hum/rel_hum', 'radiation/radiation']
 file_names = []
 for j in years:
     for k in variable_names:
