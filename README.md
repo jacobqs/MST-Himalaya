@@ -67,5 +67,5 @@ Rochester, R. E. L. (2010), Uncertainty in hydrological modelling: a case study 
 
 ## Contact
 
-This repository is made by Jacob Qvam Skavang? Reach out to jacobqs@uio.no. 
+This repository is made by Jacob Qvam Skavang. Reach out to jacobqs@uio.no. 
 
