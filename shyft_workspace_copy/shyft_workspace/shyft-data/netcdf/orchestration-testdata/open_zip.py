@@ -44,10 +44,35 @@ for l in file_names:
         zip.printdir()
 
         # extracting all the files
-        print(f'-----Extracting {variable_names} now...------')
+        print(f'-----Extracting wind speed now...------')
         zip.extractall()
-        print('------Done extracting all data-------')
+        
 
+        
+variable_name = 'discharge/discharge.nc.zip'
+
+# opening the zip file in READ mode
+with ZipFile(variable_name, 'r') as zip:
+    # printing all the contents of the zip file
+    zip.printdir()
+
+    # extracting all the files
+    print(f'-----Extracting {variable_names} now...------')
+    zip.extractall()
+
+variable_name = 'cell_data/cell_data.nc.zip'
+
+# opening the zip file in READ mode
+with ZipFile(variable_name, 'r') as zip:
+    # printing all the contents of the zip file
+    zip.printdir()
+
+    # extracting all the files
+    print(f'-----Extracting cell data now...------')
+    zip.extractall()
+
+print('------Done extracting all data-------')
+       
 print('------Getting paths to files------')
 
 precip_paths = glob.glob('precipitation*.nc')
@@ -55,6 +80,7 @@ temperature_paths = glob.glob('temperature*.nc')
 rel_hum_paths = glob.glob('rel_hum*.nc')
 radiation_paths = glob.glob('radiation*.nc')
 wind_speed_paths = glob.glob('wind_speed*.nc')
+
 
 print('------Opening files-------')
 
