@@ -21,7 +21,7 @@ for l in file_names:
         zip.printdir()
 
         # extracting all the files
-        print(f'-----Extracting {variable_names} now...------')
+        print(f'---Extracting precipitation, temperature, relative humidity and radiation now...--')
         zip.extractall()
 
 years = []
