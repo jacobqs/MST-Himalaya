@@ -64,3 +64,8 @@ Pellicciotti, F., Buergi, C., Immerzeel, W. W., Konz, M. & Shrestha, A. B. (2012
 
 Rochester, R. E. L. (2010), Uncertainty in hydrological modelling: a case study in the Tern catchment, Shropshire, UK, PhD thesis, UCL (University College London).
 
+
+## Contact
+
+This repository is made by Jacob Qvam Skavang? Reach out to jacobqs@uio.no. 
+
