@@ -28,6 +28,11 @@ future?
 
 Shyft — Statkraft’s Hydrological Forecasting Toolbox (Burkhart et al. 2021), is a mod- elling framework aimed for hydrological simulations in operational environments, but also for being a flexible and easy-to-use tool for testing scientific hypothesizes. Shyft-platform, being under development, has a goal towards being a FAIR framework for learning and research activities facilitating open-science shift (GO FAIR 2021).
 
+For more information abou Shyft please see:
+
+[Shyft source code](https://gitlab.com/shyft-os/shyft)
+[Shyft v4.8: a framework for uncertainty assessment and distributed hydrologic modeling for operational hydrology](https://gmd.copernicus.org/articles/14/821/2021/)
+
 ## Data
 
 The project will require work with several re-analysis datasets (WFDE5 global bias- adjusted ERA-5 (Cucchi et al. 2020), Hi-Aware regional dataset (ICIMOD 2021) and downscaling procedure (TopoScale/TopoClim), planning and executing modelling experi- ments, analyzing results. The FAIR principles will be a part of the of data handling (GO FAIR 2021).
