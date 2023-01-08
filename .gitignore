@@ -1,16 +1,2 @@
 # Files or folders to ignore
 
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1990.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1991.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1992.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1993.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1994.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1995.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1996.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1997.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1998.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_1999.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_2000.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_2001.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_2002.nc
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation/precipitation_2003.nc
