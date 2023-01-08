@@ -31,6 +31,7 @@ Shyft — Statkraft’s Hydrological Forecasting Toolbox (Burkhart et al. 2021),
 For more information abou Shyft please see:
 
 [Shyft source code](https://gitlab.com/shyft-os/shyft)
+
 [Shyft v4.8: a framework for uncertainty assessment and distributed hydrologic modeling for operational hydrology](https://gmd.copernicus.org/articles/14/821/2021/)
 
 ## Data
