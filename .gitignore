@@ -4,4 +4,3 @@ shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/__
 notebooks/__pycache__
 shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/TopoScale/precipitation
 shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/TopoScale/radiation
-shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/TopoScale/relative_humidity
