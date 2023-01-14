@@ -74,7 +74,7 @@ class CFDataRepos(interfaces.GeoTsRepository):
 
         time_slice, issubset = _make_time_slice(time, utc_period, CFDataRepositoryError)
 
-        x, y, m_xy, xy_slice = _limit_1D(x[:], y[:], data_cs.proj4, self.shyft_cs, geo_location_criteria, 
+        x, y, m_xy, xy_slice = _limit_1D(x[:], y[:], data_cs.proj, self.shyft_cs, geo_location_criteria, 
                                              self._padding, CFDataRepositoryError)
 
         raw_data = {}
