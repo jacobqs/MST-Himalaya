@@ -1,0 +1,17 @@
+Field name,Description,Units/Format
+TIME,timestamp,YYYY-MM-DD HH:MM:SS
+BVOLT,Battery Voltage,V
+TAIR,Air temperature,C
+RH,Relative Humidity,%
+PVOL,Accumulated Precipitation,mm
+BCON,Bucket Content,mm
+TCNR4,CNR4 sensor temperature,C
+KINC,Incoming shortwave radiation,W/m2
+KUPW,Reflected shortwave radiation,W/m2
+LDOWN,Incoming longwave radiation,W/m2
+LUPW,Outgoing longwave radiation,W/m2
+TSOIL,Soil temperature ,C
+LSD,Snow depth,m
+PRES,Atmospheric pressure ,hPa
+WSPD,Wind speed,m/s
+WINDDIR,Wind direction,degrees
