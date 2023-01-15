@@ -1,18 +1,18 @@
 ---
 sources:
-  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_geo_ts_repository.CFDataRepository
+  - repository: !!python/name:repository/wfde5_data_repository/wfde5_cf_geo_ts_repository.CFDataRepos
     types:
       - precipitation
     params:
       filename: netcdf/orchestration-testdata/precipitation.nc
       padding: 0.0
-  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_geo_ts_repository.CFDataRepository
+  - repository: !!python/name:repository/wfde5_data_repository/wfde5_cf_geo_ts_repository.CFDataRepos
     types:
       - temperature
     params:
       filename: netcdf/orchestration-testdata/temperature.nc
       padding: 0.0
-  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_geo_ts_repository.CFDataRepository
+  - repository: repository/wfde5_data_repository/wfde5_cf_geo_ts_repository.CFDataRepos
     types:
       - wind_speed
     params:
