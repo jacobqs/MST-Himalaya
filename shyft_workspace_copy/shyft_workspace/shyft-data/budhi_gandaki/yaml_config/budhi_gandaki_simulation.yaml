@@ -4,7 +4,7 @@ budhi_gandaki:
   model_config_file: budhi_gandaki_model.yaml
   datasets_config_file: budhi_gandaki_datasets.yaml
   interpolation_config_file: budhi_gandaki_interpolation.yaml
-  start_datetime: 2010-01-01T00:00:00
+  start_datetime: 2000-01-01T00:00:00
   run_time_step: 3600  # 1 hour time step
   number_of_steps: 8759   # 1 year
   region_model_id: 'budhi_gandaki-ptgsk'
@@ -16,7 +16,7 @@ budhi_gandaki:
         model: !!python/name:shyft.hydrology.pt_gs_k.PTGSKModel
     tags: []
   references:
-  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_ts_repository.CFTsRepository
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
     params:
       file: netcdf/orchestration-testdata/WFDE5/discharge.nc
       var_type: discharge
@@ -24,6 +24,6 @@ budhi_gandaki:
     - catch_id: [10]
       type: discharge
       uid: Arghat
-      run_time_step: 86400 # 3600
+      run_time_step: 3600
 
 ...

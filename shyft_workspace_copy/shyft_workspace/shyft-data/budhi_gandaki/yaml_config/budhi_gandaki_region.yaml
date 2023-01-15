@@ -1,6 +1,6 @@
 ---
 repository:
-  class: !!python/name:mst_himalya.cf_region_model_repository.CFRegionModelRepository
+  class: !!python/name:shyft.repository.netcdf.cf_region_model_repository.CFRegionModelRepository
   params:
     data_file: netcdf/orchestration-testdata/cell_data.nc
 
@@ -8,8 +8,8 @@ domain:
   EPSG: 32645
   nx: 144
   ny: 144
-  step_x: 1000
-  step_y: 1000
+  step_x: 50000
+  step_y: 50000
   lower_left_x: 73528.58823297377
   lower_left_y: 2854878.42464918
 
