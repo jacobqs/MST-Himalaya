@@ -13,9 +13,9 @@
       file: netcdf/orchestration-testdata/discharge.nc
       var_type: discharge
     1D_timeseries:
-    - catch_id: [1308,1394,1867,2198,2402,2545]
-      uid: /TEV.-Tya...........-D9100A3B1060R123.999
-      start_datetime: 1999-01-01T00:00:00
+    - catch_id: [10]
+      uid: Arghat
+      start_datetime: 2000-01-01T00:00:00
       run_time_step: 86400 # 3600
       number_of_steps: 364 # 26280
       weight: 1.0
@@ -25,30 +25,7 @@
           s_corr: 1.0
           s_var: 1.0
           s_bias: 1.0
-    - catch_id: [1228,1443,1726,2041,2129,2195,2277,2465,2718,3002,3630,1000010,1000011]
-      uid: /TEV.-Selbu-lok.....-D9100A3B1070R123.020
-      start_datetime: 1999-01-01T00:00:00
-      run_time_step: 86400 # 3600
-      number_of_steps: 364 # 26280
-      weight: 1.0
-      obj_func:
-        name: NSE # Nash–Sutcliffe efficiency (NSE) or Kling–Gupta efficiency (KGE)
-        scaling_factors:
-          s_corr: 1.0
-          s_var: 1.0
-          s_bias: 1.0
-    - catch_id: [1996,2446,2640,3536]
-      uid: /TEV.-Nea...........-D9100A3B1050R123.998
-      start_datetime: 1999-01-01T00:00:00
-      run_time_step: 86400 # 3600
-      number_of_steps: 364 # 26280
-      weight: 1.0
-      obj_func:
-        name: NSE # Nash–Sutcliffe efficiency (NSE) or Kling–Gupta efficiency (KGE)
-        scaling_factors:
-          s_corr: 1.0
-          s_var: 1.0
-          s_bias: 1.0
+
   overrides:
     model:
       model_t: !!python/name:shyft.hydrology.pt_gs_k.PTGSKOptModel
