@@ -1,6 +1,6 @@
 ---
 repository:
-  class: !!python/name:shyft.hydrology.repository.netcdf.cf_region_model_repository.CFRegionModelRepository
+  class: !!python/name:mst_himalya.cf_region_model_repository.CFRegionModelRepository
   params:
     data_file: netcdf/orchestration-testdata/cell_data.nc
 
