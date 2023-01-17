@@ -8,13 +8,13 @@
       tr_start: 0.1
       tr_stop: 1.0e-5
   target:
-  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_ts_repository.CFTsRepository
+  - repository: !!python/name:mst_himalaya.wfde5_cf_ts_repository.CFTsRepository 
     params:
       file: netcdf/orchestration-testdata/discharge.nc
       var_type: discharge
     1D_timeseries:
     - catch_id: [10]
-      uid: Arghat
+      uid: Arughat
       start_datetime: 2000-01-01T00:00:00
       run_time_step: 3600
       number_of_steps: 43800
