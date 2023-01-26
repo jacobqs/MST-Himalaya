@@ -1,0 +1,83 @@
+\documentclass[USenglish]{uiomaster}  %% ... or norsk or nynorsk or USenglish
+
+
+\usepackage{style}
+
+\author{Jacob Qvam Skavang}
+\title{Forecasting River Discharge for Hydropower Production in Central Himalaya, Nepal}
+
+\addbibresource{bib.bib}  %% ... or whatever
+
+
+
+\includeonly
+{
+    sections/abstract,
+    sections/acknowledgements,
+    sections/introduction,
+    sections/background,
+    sections/study_area,
+    sections/methods,
+    sections/results,
+    sections/discussion,
+    sections/conclusion,
+    sections/appendix_code,
+}
+
+\begin{document}
+
+\uiomasterfp[dept={Department of Geosciences},  %% ... or your department
+  program={Hydrology and Glaciology},                        %% ... or your study program
+  supervisors = {Olga Silantyeva \\ Lena Merete Tallaksen \\ Kristoffer Aalstad}, color = blue, master, long                 %% ... or blank
+  % or supervisors={A Name\and B Name},     %% if more than one
+  %master                                  %% ... or bachelor
+  %long,
+]                                     %% ... or short
+
+\frontmatter{}
+
+\begin{abstract}
+    Write an abstract
+\end{abstract}
+
+\tableofcontents{}
+\listoffigures{}
+\listoftables{}
+
+\begin{preface}
+  Here comes your preface, including acknowledgments and thanks.
+\end{preface}
+
+\mainmatter{}
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Background}
+\input{chapters/background}
+
+\chapter{Study area}
+\input{chapters/study_area}
+
+\chapter{Data and methods}
+\input{chapters/methods}
+
+\chapter{Results}
+\input{chapters/results}
+
+\chapter{Discussion}
+\input{chapters/discussion}
+
+\chapter{Conclusions and outlook}
+\input{chapters/conclusion}
+
+\appendix           % "Chapter" is renamed "Appendix"
+
+
+\chapter{Downloading data from the CDS API}
+\input{chapters/appendix_code}
+
+\backmatter{}
+\printbibliography{}
+
+\end{document}
