@@ -6,7 +6,10 @@ years = []
 for i in range(1990,2020):
     years.append(str(i))
 
-variable_names = ['precipitation/precipitation', 'temperature/temperature', 'rel_hum/rel_hum', 'radiation/radiation']
+variable_names = ['shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/WFDE5/precipitation/precipitation', 
+                  'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/WFDE5/temperature/temperature',
+                  'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/WFDE5/rel_hum/rel_hum', 
+                  'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/WFDE5/radiation/radiation']
 file_names = []
 for j in years:
     for k in variable_names:
@@ -28,7 +31,7 @@ years = []
 for i in range(1999,2017):
     years.append(str(i))
 
-variable_names = ['wind_speed/wind_speed']
+variable_names = ['shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/WFDE5/wind_speed/wind_speed']
 file_names = []
 
 for j in years:
@@ -49,7 +52,7 @@ for l in file_names:
         
 
         
-variable_name = 'discharge/discharge.nc.zip'
+variable_name = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/discharge/Arughat/discharge.nc.zip'
 
 # opening the zip file in READ mode
 with ZipFile(variable_name, 'r') as zip:
@@ -57,7 +60,7 @@ with ZipFile(variable_name, 'r') as zip:
     zip.printdir()
 
     # extracting all the files
-    print(f'-----Extracting {variable_names} now...------')
+    #print(f'-----Extracting {variable_names} now...------')
     zip.extractall()
 
 variable_name = 'cell_data/cell_data.nc.zip'
