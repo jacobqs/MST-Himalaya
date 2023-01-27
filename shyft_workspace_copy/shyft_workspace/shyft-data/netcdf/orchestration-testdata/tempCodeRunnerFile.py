@@ -95,10 +95,10 @@ wind_speed = xr.open_mfdataset(wind_speed_paths)
 
 print('-------Writing NETCDF4 files-------')
 
-precip.to_netcdf(path = '/Downloads/precipitation.nc', format = 'NETCDF4')
-temperature.to_netcdf(path = '/Downloads/temperature.nc', format = 'NETCDF4')
-rel_hum.to_netcdf(path = '/Downloads/relative_humidity.nc', format = 'NETCDF4')
-radiation.to_netcdf(path = '/Downloads/radiation.nc', format = 'NETCDF4')
-wind_speed.to_netcdf(path = '/Downloads/wind_speed.nc', format = 'NETCDF4')
+precip.to_netcdf(path = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/precipitation.nc', format = 'NETCDF4')
+temperature.to_netcdf(path = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/temperature.nc', format = 'NETCDF4')
+rel_hum.to_netcdf(path = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/relative_humidity.nc', format = 'NETCDF4')
+radiation.to_netcdf(path = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/radiation.nc', format = 'NETCDF4')
+wind_speed.to_netcdf(path = 'shyft_workspace_copy/shyft_workspace/shyft-data/netcdf/orchestration-testdata/wind_speed.nc', format = 'NETCDF4')
 
 print('-------Done making netCDF files. All files correctly extracted!-----')

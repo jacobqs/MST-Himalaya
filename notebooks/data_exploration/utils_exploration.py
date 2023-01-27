@@ -37,12 +37,15 @@ class GeoTsObject:
         self.cell_data_path = glob.glob(self.wfde5_path + 'cell_data/*.nc')
 
         # Discharge data
-        self.discharge_path = glob.glob(self.home_dir + '/Documents/MST Himalaya/discharge/*.txt')
+        self.discharge_path = glob.glob(self.home_dir + '/Documents/MST Himalaya/discharge/*.txt')[0]
 
         # Name of forcing variables
         self.forcing_variables = ['pressure_pa', 'specific_humidity_kgkg', 'rainfall_flux_kgms', 
                                 'snowfall_flux_kgms', 'temperature_K','shortwave_down_wm',  
                                 'wind_speed_ms']
+        # Shape file of catchments
+        self.budhi_gandaki_shp_path = self.home_dir + '/Documents/MST Himalaya/QGIS/cid10/10.shp'
+        self.langtang_shp_path = self.home_dir + '/Documents/MST Himalaya/QGIS/cid11/11.shp'
         
     def read_netcdf(self, as_dataframe = False):
         forcing_data = dict()
