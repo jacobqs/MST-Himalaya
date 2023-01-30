@@ -21,8 +21,8 @@ Forcing data are used to drive the hydrological model. Shyft needs precipitation
     \textbf{Forcing} & \textbf{Data} & \textbf{Spatial} & \textbf{Temporal} & \textbf{n} & \textbf{Reference} \\
     \textbf{dataset} & \textbf{period} & \textbf{resolution} & \textbf{resolution} &  & \\
     \hline
-    WFDE5 & 1990-2019 & 0.5◦ × 0.5◦ & Hourly & 9 & \cite{cucchi_wfde5_2020} \\
-    ERA5 + TopoScale & 1999-2015 & 0.5◦ × 0.5◦ & Hourly & & \cite{hersbach18} \\
+    WFDE5 & 1990-2019 & 0.5◦ × 0.5◦ & Hourly & 9 & \autocite{cucchiWFDE5BiasadjustedERA52020} \\
+    ERA5 + TopoScale & 1999-2015 & 0.5◦ × 0.5◦ & Hourly & & \autocite{hersbachERA5HourlyData2018} \\
     \bottomrule         
     \end{tabular}%
     }
@@ -35,7 +35,7 @@ Forcing data are used to drive the hydrological model. Shyft needs precipitation
 
 \subsubsection{WFDE5}
 
-The bias-adjusted ERA5 reanalysis data for impact studies (WFDE5) is generated through applying the WATCH Forcing Data methodology to surface meteorological variables from the ERA5 reanalysis \parencite{cucchi_wfde5_2020}. Reanalysis data is a combination of model data and worldwide observations into a globally complete and consistent dataset using the laws of physics \parencite{hersbach18}. The WFDE5 dataset contains 11 variables with an hourly temporal resolution on a regular longitude-latitude 0.5 degree grid. The dataset has a global coverage, but is only defined at land and lake points. The WFDE5 dataset is spanning from January 1979 to the end of 2019, and has been adjusted using an elevation correction and monthly-scale bias based on Climatic Research Unit (CRU) data (for temperature, diurnal temperature range, cloud-cover, wet days number and precipitation fields). The datasets used for monthly bias-correction are CRU TS4.03 from CRU \parencite{harris2020version} from 1979 to 2019 for all variables, and the GPCCv2018 full data product \parencite{schneider2018gpcc} for rainfall. The dataset is distributed by the Copernicus Climate Change Service (C3S) through the Climate Data Store (CDS) as monthly netCDF files that are downloaded as zip-files or compressed tar files \parencite{copernicus_climate_change_service_near_2020}. NetCDF files are self-describing data that are machine-independent. The netCDF format supports creation, access, and sharing of array-oriented scientific data. The data can be downloaded via the CDS API or through the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
+The bias-adjusted ERA5 reanalysis data for impact studies (WFDE5) is generated through applying the WATCH Forcing Data methodology to surface meteorological variables from the ERA5 reanalysis \autocite{cucchiWFDE5BiasadjustedERA52020}. Reanalysis data is a combination of model data and worldwide observations into a globally complete and consistent dataset using the laws of physics \autocite{cucchiWFDE5BiasadjustedERA52020}. The WFDE5 dataset contains 11 variables with an hourly temporal resolution on a regular longitude-latitude 0.5 degree grid. The dataset has a global coverage, but is only defined at land and lake points. The WFDE5 dataset is spanning from January 1979 to the end of 2019, and has been adjusted using an elevation correction and monthly-scale bias based on Climatic Research Unit (CRU) data (for temperature, diurnal temperature range, cloud-cover, wet days number and precipitation fields). The datasets used for monthly bias-correction are CRU TS4.03 from CRU \autocite{harrisVersionCRUTS2020} from 1979 to 2019 for all variables, and the GPCCv2018 full data product \autocite{schneiderGPCCFullData2018} for rainfall. The dataset is distributed by the Copernicus Climate Change Service (C3S) through the Climate Data Store (CDS) as monthly netCDF files that are downloaded as zip-files or compressed tar files \autocite{copernicusclimatechangeserviceSurfaceMeteorologicalVariables2020}. NetCDF files are self-describing data that are machine-independent. The netCDF format supports creation, access, and sharing of array-oriented scientific data. The data can be downloaded via the CDS API or through the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
 
 \autoref{tab:wfde5_variables} shows the names and units of the near-surface variables from WFDE5 used in this study. 
 
@@ -71,7 +71,7 @@ Qair    & 2 m specific humidity              & kg kg$^{-1}$          & Nil  \\
 
  Shyft requires the units of the forcing data to be converted into standard input units. Temperature was converted from Kelvin (K) to Celsius degrees ($^{\circ}$C) by simply subtracting 273.15 from the absolute temperature. Similarly, the surface pressure was converted from Pa to hPa by multiplying with 0.01. Precipitation was converted to mm h$^{-1}$ by summing the snowfall flux (kg m$^{-2}$ s$^{-1}$) and the rainfall flux (g m$^{-2}$ s$^{-1}$), and then multiplying the sum with 3600 (s h$^{-1}$). 
  
-The relative humidity was calculated using the MetPy package in Python \parencite{metpy}. The relative humidity function in this package calculates relative humidity from total atmospheric pressure (hPa), air temperature ($^{\circ}$C) and specific humidity (kg kg$^{-1}$). The formula is based upon \cite{wallace1977atmospheric} and \cite{salby_fundamentals_1996}. 
+The relative humidity was calculated using the MetPy package in Python \autocite{mayMetPyMeteorologicalPython2022}. The relative humidity function in this package calculates relative humidity from total atmospheric pressure (hPa), air temperature ($^{\circ}$C) and specific humidity (kg kg$^{-1}$). The formula is based upon \autocite{wallaceAtmosphericScienceIntroductory1977} and \autocite{salbyFundamentalsAtmosphericPhysics1996a}. 
 
 The units of wind (m s$^{-1}$) and global radiation (W m$^{-2}$) were not converted. 
 
@@ -79,16 +79,16 @@ The units of wind (m s$^{-1}$) and global radiation (W m$^{-2}$) were not conver
     RH = \frac{q}{(1 - q) w_{s}}
 \end{equation}
 
-where $RH$ is relative humidity as unitless ratio,  $q$ is the specific humidity and $w_{s}$ is the saturation mixing ratio. The saturation mixing ratio is the ratio between the density of water vapor and the density of dry air \parencite{kasahara_weather_2003}. 
+where $RH$ is relative humidity as unitless ratio,  $q$ is the specific humidity and $w_{s}$ is the saturation mixing ratio. The saturation mixing ratio is the ratio between the density of water vapor and the density of dry air \autocite{kasaharaWeatherPredictionNumerical2003}. 
 
 
 \subsubsection{ERA5}
 
-The ERA5 dataset is the fifth generation reanalysis from the European Centre for Medium-Range Weather Forecasts (ECMWF) \parencite{hersbach18}. The dataset provides hourly estimates for a large number of atmospheric, ocean-wave and surface quantities. The data is available from 1950 to present, and has been regridded to a regular lat-lon grid of 0.25 degrees. The dataset is updated daily, and can be downloaded in either GRIB or netCDF format from the CDS API or the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
+The ERA5 dataset is the fifth generation reanalysis from the European Centre for Medium-Range Weather Forecasts (ECMWF) \autocite{hersbachERA5HourlyData2018}. The dataset provides hourly estimates for a large number of atmospheric, ocean-wave and surface quantities. The data is available from 1950 to present, and has been regridded to a regular lat-lon grid of 0.25 degrees. The dataset is updated daily, and can be downloaded in either GRIB or netCDF format from the CDS API or the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
 
 \section{Topographical Data}
 
-The SRTM 1 Arc-Second Global elevation data from the NASA's Shuttle Radar Tomography Mission (NASA-SRTM) provides a worldwide coverage of void filled data filled with a resolution of 1 arc-second ($\sim$ 30 meters) \parencite{earth_resources_observation_and_science_eros_center_shuttle_2017}. The Digital Elevation Model (DEM) data can be downloaded from the coverage map in the  \href{https://earthexplorer.usgs.gov/}{USGS Earth Explorer}. Each GeoTIFF file covers 1 degree tiles, and is about 25 MB each.
+The SRTM 1 Arc-Second Global elevation data from the NASA's Shuttle Radar Tomography Mission (NASA-SRTM) provides a worldwide coverage of void filled data filled with a resolution of 1 arc-second ($\sim$ 30 meters) \autocite{earthresourcesobservationandscienceeroscenterShuttleRadarTopography2017}. The Digital Elevation Model (DEM) data can be downloaded from the coverage map in the  \href{https://earthexplorer.usgs.gov/}{USGS Earth Explorer}. Each GeoTIFF file covers 1 degree tiles, and is about 25 MB each.
 
 \autoref{tab:srtm} shows the DEM data that was downloaded for this study.
 
@@ -117,7 +117,7 @@ The DEM files were merged into one DEM file in QGIS. This DEM file was then open
 
 \section{Land Cover Data Sets}
 
-The Land Cover Classification System (LCCS) Land Cover Map Fine Resolution V2.3 Global dataset from the GlobCover Portal provides global composites and land cover maps \parencite{bontemps_globcover_2011}. The GlobCover products have been processed by ESA and by the Université Catholique de Louvain using input observations from the 300 m MERIS sensor on board on the ENVISAT satellite mission. The land cover maps covers December 2004 - June 2006 and January - December 2009. The surface reflectance mosaic products are projected in a Platé-Carré projection (WGS84 ellipsoid) with a 1/360° pixel resolution. The land cover classes as defined by a set of classifiers. 
+The Land Cover Classification System (LCCS) Land Cover Map Fine Resolution V2.3 Global dataset from the GlobCover Portal provides global composites and land cover maps \autocite{bontempsGLOBCOVER2009Products2011}. The GlobCover products have been processed by ESA and by the Université Catholique de Louvain using input observations from the 300 m MERIS sensor on board on the ENVISAT satellite mission. The land cover maps covers December 2004 - June 2006 and January - December 2009. The surface reflectance mosaic products are projected in a Platé-Carré projection (WGS84 ellipsoid) with a 1/360° pixel resolution. The land cover classes as defined by a set of classifiers. 
 
 \section{Validation datasets}
 
@@ -127,7 +127,7 @@ Daily stream flow data from the period 2000-2015 is obtained from The Department
 
 \subsection{Snow Products}
 
-The High Mountain Asia (HMA) snow reanalysis data set from the NASA Snow and Ice Data Center (NSIDC) covers the period 1 October 1999 to 30 September 2017 with a daily temporal resolution and 16 arc-seconds x 16 arc-seconds spatial resolution \parencite{Liu_2021}. 
+The High Mountain Asia (HMA) snow reanalysis data set from the NASA Snow and Ice Data Center (NSIDC) covers the period 1 October 1999 to 30 September 2017 with a daily temporal resolution and 16 arc-seconds x 16 arc-seconds spatial resolution \autocite{margulisHighMountainAsia2021}. 
 
 
 \section{Pre-processing of data}
@@ -140,14 +140,14 @@ The High Mountain Asia (HMA) snow reanalysis data set from the NASA Snow and Ice
 \section{Hydrological Modeling Framework}
 
 
-Shyft is an open-source cross-platform hydrological toolbox built to provide a computation framework for spatially distributed hydrologic models \parencite{burkhart_shyft_2021}. Shyft is developed for operational, regional-scale hydropower inflow forecasting. The platform is developed by Statkraft AS, the largest generator of renewable energy in Europe, in cooperation with the research community at the University of Oslo. The objectives of Shyft are to i$)$ provide a flexible forecasting toolbox for operational environments, ii$)$ facilitate computationally efficient calculations of hydrologic response at the regional scale, iii$)$ enable the use of multiple hypothesis to quantify forecast uncertainties, iv$)$ allow for multiple model forcing configurations, and v$)$ promote expeditious implementations of the findings from research into operational modeling. 
+Shyft is an open-source cross-platform hydrological toolbox built to provide a computation framework for spatially distributed hydrologic models \autocite{burkhartShyftV4Framework2021}. Shyft is developed for operational, regional-scale hydropower inflow forecasting. The platform is developed by Statkraft AS, the largest generator of renewable energy in Europe, in cooperation with the research community at the University of Oslo. The objectives of Shyft are to i$)$ provide a flexible forecasting toolbox for operational environments, ii$)$ facilitate computationally efficient calculations of hydrologic response at the regional scale, iii$)$ enable the use of multiple hypothesis to quantify forecast uncertainties, iv$)$ allow for multiple model forcing configurations, and v$)$ promote expeditious implementations of the findings from research into operational modeling. 
 
-One of the strengths of Shyft is that multiple models may be built through the creation of hydrologic algorithms from a library of well known routines or by the construction of new routines \parencite{burkhart_shyft_2021}. The user of Shyft can get access to all of the components of the framework via Python through an application programming interface (API), while still having high computational performance as the algorithms are implemented in modern C++. This API set-up enables rapid use of different model configurations and selection of an optimal forecast model.
+One of the strengths of Shyft is that multiple models may be built through the creation of hydrologic algorithms from a library of well known routines or by the construction of new routines \autocite{burkhartShyftV4Framework2021}. The user of Shyft can get access to all of the components of the framework via Python through an application programming interface (API), while still having high computational performance as the algorithms are implemented in modern C++. This API set-up enables rapid use of different model configurations and selection of an optimal forecast model.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=11cm]{figures/methods/Shyft Architecture.jpg}
-    \caption{Shyft arcitechture. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \cite{burkhart_shyft_2021}}
+    \caption{Shyft arcitechture. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
     \label{fig:shyft_architecture}
 \end{figure}
 
@@ -155,7 +155,7 @@ One of the strengths of Shyft is that multiple models may be built through the c
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=13cm]{figures/methods/Swimlane Diagram.jpg}
-    \caption{Overview of the main Shyft API types. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \cite{burkhart_shyft_2021}}
+    \caption{Overview of the main Shyft API types. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
     \label{fig:shyft}
 \end{figure}
 
@@ -201,14 +201,14 @@ Snow cover        & per pixel        & MODIS           & 8-day    \\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=10cm]{figures/methods/configs-4.jpg}
-    \caption{Evalutation of multiple configurations. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \cite{burkhart_shyft_2021}}
+    \caption{Evalutation of multiple configurations. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
     \label{fig:configurations}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=8cm]{figures/methods/configs.jpg}
-    \caption{Model Stacks components. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \cite{burkhart_shyft_2021}}
+    \caption{Model Stacks components. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
     \label{fig:model_stack}
 \end{figure}
 
@@ -240,13 +240,13 @@ Snow cover        & per pixel        & MODIS           & 8-day    \\
   \textbf{limit} &
   \textbf{Sources} \\ \toprule
 & Outlet & & & &  \\
-$c_1$             & empirical coeff. 1 (–) & K  & -8.0  & 0.0   & \cite{sapkota2016regional, lombrana17} \\
+$c_1$             & empirical coeff. 1 (–) & K  & -8.0  & 0.0   & \autocite{lombranaEvaluationsSnowSimulations2017,sapkotaRegionalModellingNarayani2016} \\
 & Outlet & & & &  \\
-$c_2$             & empirical coeff. 2 (–) & K  & -1.0  & 1.2   & \cite{sapkota2016regional, lombrana17}  \\
+$c_2$             & empirical coeff. 2 (–) & K  & -1.0  & 1.2   & \autocite{lombranaEvaluationsSnowSimulations2017,sapkotaRegionalModellingNarayani2016}  \\
 & Outlet & & & &  \\
-$c_3$             & empirical coeff. 3 (–) & K  & -0.15 & -0.05 & \cite{sapkota2016regional, lombrana17}  \\
+$c_3$             & empirical coeff. 3 (–) & K  & -0.15 & -0.05 & \autocite{lombranaEvaluationsSnowSimulations2017,sapkotaRegionalModellingNarayani2016}  \\
 \multicolumn{6}{l}{\textbf{Prescribed parameters}}                             \\ \hline
-$ae$ scale factor & Scaling factor for AE (–)          & AE & 1.0   & 1.0   & \cite{sapkota2016regional, lombrana17}  \\ 
+$ae$ scale factor & Scaling factor for AE (–)          & AE & 1.0   & 1.0   & \autocite{lombranaEvaluationsSnowSimulations2017,sapkotaRegionalModellingNarayani2016} \\ 
 \bottomrule
 
 \multicolumn{6}{l}{'K' is the catchment response function and 'AE' is actual evapotranspiration.}   \\      

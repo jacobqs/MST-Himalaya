@@ -19,4 +19,4 @@
   * Should it be done by rectangle or catchment outline?
 * What land cover data was used to make cell data?
   * MODIS (check Bhattarai article)
-
+* Why is centroid latitude and longitude only one value ?
