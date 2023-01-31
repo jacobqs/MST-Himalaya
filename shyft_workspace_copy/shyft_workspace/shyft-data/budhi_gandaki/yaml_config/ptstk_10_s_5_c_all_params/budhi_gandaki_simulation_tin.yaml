@@ -6,14 +6,14 @@ budhi_gandaki:
   interpolation_config_file: budhi_gandaki_interpolation.yaml
   start_datetime: 2010-01-01T00:00:00
   run_time_step: 3600  # 1 hour time step
-  number_of_steps: 48   # 1 year
-  region_model_id: 'budhi_gandaki-ptgsk'
+  number_of_steps: 87600   # 10 years
+  region_model_id: 'budhi_gandaki-ptstk'
   #interpolation_id: 2   # this is optional (default 0)
   initial_state:
     repository:
       class: !!python/name:shyft.hydrology.repository.generated_state_repository.GeneratedStateRepository
       params:
-        model: !!python/name:shyft.hydrology.pt_gs_k.PTGSKModel
+        model: !!python/name:shyft.hydrology.pt_st_k.PTSTKModel
     tags: []
   references:
   - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_ts_repository.CFTsRepository

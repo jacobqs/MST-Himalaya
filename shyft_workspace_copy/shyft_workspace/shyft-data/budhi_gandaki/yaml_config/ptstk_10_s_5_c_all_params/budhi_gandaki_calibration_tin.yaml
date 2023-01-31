@@ -27,7 +27,7 @@
           s_bias: 1.0
   overrides:
     model:
-      model_t: !!python/name:shyft.hydrology.pt_gs_k.PTGSKOptModel
+      model_t: !!python/name:shyft.hydrology.pt_ST_k.PTSTKOptModel
   calibration_parameters:
     kirchner.c1:
       min: -8.0 # -3.0
