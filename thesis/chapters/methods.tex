@@ -84,7 +84,7 @@ where $RH$ is relative humidity as unitless ratio,  $q$ is the specific humidity
 
 \subsubsection{ERA5}
 
-The ERA5 dataset is the fifth generation reanalysis from the European Centre for Medium-Range Weather Forecasts (ECMWF) \autocite{hersbachERA5HourlyData2018}. The dataset provides hourly estimates for a large number of atmospheric, ocean-wave and surface quantities. The data is available from 1950 to present, and has been regridded to a regular lat-lon grid of 0.25 degrees. The dataset is updated daily, and can be downloaded in either GRIB or netCDF format from the CDS API or the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
+The ERA5 dataset is the fifth generation reanalysis from the European Centre for Medium-Range Weather Forecasts (ECMWF) \autocite{hersbachERA5HourlyData2018}. The dataset provides hourly estimates for a large number of atmospheric, ocean-wave and surface quantities. The data is available from 1950 to present, and has been re-gridded to a regular lat-lon grid of 0.25 degrees. The dataset is updated daily, and can be downloaded in either GRIB or netCDF format from the CDS API or the \href{https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview}{C3S Climate Data Store}.
 
 \section{Topographical Data}
 
@@ -144,12 +144,18 @@ Shyft is an open-source cross-platform hydrological toolbox built to provide a c
 
 One of the strengths of Shyft is that multiple models may be built through the creation of hydrologic algorithms from a library of well known routines or by the construction of new routines \autocite{burkhartShyftV4Framework2021}. The user of Shyft can get access to all of the components of the framework via Python through an application programming interface (API), while still having high computational performance as the algorithms are implemented in modern C++. This API set-up enables rapid use of different model configurations and selection of an optimal forecast model. 
 
-Since the Shyft toolbox is built for operational, region-scale hydropower inflow forecasing, some of its key design principles vary from what may be prioritized in a pure research environment. Shyft is well-documented open source code and follows the latest code standards, due to the strict requirements regarding software security, testing and code quality in an operational environment. One of the key concepts in the Shyft philosophy is that "data should live at the source". This implies that users of Shyft are encouraged to write their of repositories that connect directly to the source data.
+Since the Shyft toolbox is built for operational, region-scale hydropower inflow forecasting, some of its key design principles vary from what may be prioritized in a pure research environment \autocite{burkhartShyftV4Framework2021}. Shyft is well-documented open source code and follows the latest code standards, due to the strict requirements regarding software security, testing and code quality in an operational environment. One of the key concepts in the Shyft philosophy is that "data should live at the source". This implies that users of Shyft are encouraged to write their of repositories that connect directly to the source data. This is done to ensure that the data is always up-to-date and that the data is not stored in multiple places. Another key design principle of Shyft facilitates flexible entry points for novel algorithms, while also testing these in parallel with operational runs. This also allows for flexible and exploratory research.
+
+\subsection{The architecture of Shyft}
+
+The Shyft platform is distributed through three GitLab repositories: \href{https://gitlab.com/shyft-os/shyft}{shyft}, \href{https://gitlab.com/shyft-os/shyft-data}{shyft-data} and \href{https://gitlab.com/shyft-os/shyft-doc}{shyft-docs}. The shyft repository contains the source code for the Shyft platform, while the shyft-data repository contains the test-data needed for the full runs and demo. The shyft-docs repository contains the end-user documentation for the Shyft platform. Additionally, there is also a \href{https://gitlab.com/shyft-os/dockers}{Dockers} repository that contains the Docker build recipes for the Shyft eco-system.
+
+The Shyft platform is built on top of C++ and Python \autocite{burkhartShyftV4Framework2021}. Basic data structures, hydrologic algorithms and models in the Shyft core is written in C++ to provide high computational efficiency \autocite{zehraComparativeAnalysisPython2020}. The C++ code is then compiled into a Python extension module, which is then imported into Python. The Shyft API which is coded in Python is the main interface for the user to interact with the Shyft platform.  \autoref{fig:shyft_architecture} shows the architecture of the Shyft platform. 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=11cm]{figures/methods/Shyft Architecture.jpg}
-    \caption{Shyft arcitechture. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
+    \caption{Shyft arcitechture. The figure is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}, and was made using \href{https://miro.com}{Miro}.}
     \label{fig:shyft_architecture}
 \end{figure}
 
@@ -157,9 +163,24 @@ Since the Shyft toolbox is built for operational, region-scale hydropower inflow
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1.1\textwidth,height=13cm]{figures/methods/Swimlane Diagram.jpg}
-    \caption{Overview of the main Shyft API types. The figure is made using \href{https://miro.com}{Miro}, and it is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}}
-    \label{fig:shyft}
+    \caption{Overview of the main Shyft API types. API types used for simulation are shown to the left of the blue dashed line, while calibration API types are found to the right of the blue dashed line. The figure shows an example of the PTSSK model stack (Priestly-Taylor-Skaugen-Snow-Kirchner). The figure is an adaptation of the figure in \autocite{burkhartShyftV4Framework2021}, and was made using \href{https://miro.com}{Miro}.}
+    \label{fig:shyft_api_types}
 \end{figure}
+
+\subsubsection{C++ core}
+The C++ code base contains several separate code folders \autocite{burkhartShyftV4Framework2021}. The core folder handles framework-related functionality such as serialization; the hydrology folder includes hydrological algorithms and the time series folder handles generic time series. 
+
+\subsubsection{Python API}
+
+The Shyft API is providing the relevant Shyft Core implementations that are needed to configure and utilize models in Python \autocite{burkhartShyftV4Framework2021}. \autoref{fig:shyft_api_types} gives an overview of the main Shyft API types. The idea behind the Python API is that users can write pure Python code without being exposed to the C++ code base. The API allows the user to configure and run a model and access data at various levels. Once a model is initiated, the data is stored at a random access memory of the computer, and the user can access the data using interactive shell commands like Jupyter Notebook or IPython. Thus, the Shyft API allows the user to interactively configure the model, provide forcing data to it, run the model, extract and plot variables. Model parameters can easily be updated once the model is instantiated in this way.
+
+$shyft.time\_series$ is an API type that provides mathematical and statistical operations and functionality for time series \autocite{burkhartShyftV4Framework2021}. Time series can be either expressions or concrete time series. Expressions are time series that are defined by a mathematical expression, while concrete time series are time series that are defined by a set of points in time. All time series have a time axis (set of non-overlapping periods), values and a point interpretation policy. The point interpretation policy defines how the value of a time series is interpreted at a given point in time, and can be either instant value, average value or sum value. 
+
+$api.GeoCellData$ represents common constant cell properties, regardless of model and cell assemblies. The GeoCellData object contains the following properties: elevation, latitude, longitude, slope, aspect, land type, soil type, land cover fraction, soil moisture, snow cover fraction, and the cell area.
+
+$Cell$ contains $GeoCellData$ and $TimeSeries$ of model forcings ($api.GeoPointSource$) \autocite{burkhartShyftV4Framework2021}. The $Cell$ is also specific to the $Model$ selected. The $CellVector$ is a container for all the cells. 
+
+$RegionModel$ is a container for all the $Cells$ and the $Model Parameters$ at region and catchment level. Since everything is vectorized, the $Model State$ collects all the states for each cell \autocite{burkhartShyftV4Framework2021}. The region model provides functionality like: initialization ($Model.initialize\_cell\_env(...)$), interpolation ($Model.interpolate(...)$), simulation ($Model.run\_cells()$), calibration ($Optimizer.optimize(...)$). The $GoalFunction$ that is being minimized is based upon the $TargetSpecification$ in the optimizer.
 
 The primary model forcing variables in Shyft are precipitation, atmospheric temperature, wind speed, shortwave radiation and relative humidity.
 
