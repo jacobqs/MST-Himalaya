@@ -182,7 +182,31 @@ $Cell$ contains $GeoCellData$ and $TimeSeries$ of model forcings ($api.GeoPointS
 
 $RegionModel$ is a container for all the $Cells$ and the $Model Parameters$ at region and catchment level. Since everything is vectorized, the $Model State$ collects all the states for each cell \autocite{burkhartShyftV4Framework2021}. The region model provides functionality like: initialization ($Model.initialize\_cell\_env(...)$), interpolation ($Model.interpolate(...)$), simulation ($Model.run\_cells()$), calibration ($Optimizer.optimize(...)$). The $GoalFunction$ that is being minimized is based upon the $TargetSpecification$ in the optimizer.
 
-The primary model forcing variables in Shyft are precipitation, atmospheric temperature, wind speed, shortwave radiation and relative humidity.
+$Region environment$ contains all the $Source$ vectors of a certain type (e.g. precipitation, temperature, etc.) \autocite{burkhartShyftV4Framework2021}. 
+
+\subsubsection{Repositories}
+
+The necessary data for running simulations depends on the chosen hydrological model. At a minimum, most models requires temperature and precipitation, but some models also require wind speed, relative humidity and shortwave radiation. 
+
+The data required to run simulations in Shyft are managed through repositories \autocite{fowlerPatternsEnterpriseApplication2003}. A repository is a Python based interface to data \autocite{masnunInterfacesPythonProtocols}. Each repository in Shyft has a specific function, a defined interface and multiple implementations of these interfaces. The repositories return data in Shyft API types in order to keep the code in Shyft orchestration at a minimum. The following interfaces are available in Shyft:
+
+\begin{quote}
+    \textbf{\textit{Region model repository}:} Presents a configured region model, without revealing underlying implementation specific details regarding the storage of model configuration and data (such as netCDF files).
+
+    \textbf{\textit{Geo-located time series repository}:} Provides geo-located time series for for meteorology- and hydrology-relevant types.
+
+    \textbf{\textit{Interpolation parameter repository}:} Gives parameters for the interpolation method utilized in the simulation.
+
+    \textbf{\textit{State repository}:} Stores the model states and provides them to the region model.
+
+\end{quote}
+
+\subsection{Orchestration}
+
+The orchestration layer is the composition of the simulation configuration \autocite{burkhartShyftV4Framework2021}. This includes defining the model domain, selecting datasets and model algorithms, and presenting the results. The Shyft orchestration is built on top of the API functionalities and offers utilities for configuring, running and post-processing of simulation. The two main objectives of the orchestration are to offer easy entry points for users of Shyft and to utilize all the functionalities of Shyft in operational environments.
+
+
+The primary model forcing variables in Shyft are precipitation, atmospheric temperature, wind speed, shortwave radiation and relative humidity. 
 
 
 \begin{table}[ht]
