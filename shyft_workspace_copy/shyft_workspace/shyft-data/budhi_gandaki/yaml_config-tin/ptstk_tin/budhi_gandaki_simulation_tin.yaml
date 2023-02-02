@@ -1,0 +1,29 @@
+---
+budhi_gandaki:
+  region_config_file: budhi_gandaki_region_tin.yaml
+  model_config_file: budhi_gandaki_model.yaml
+  datasets_config_file: budhi_gandaki_datasets.yaml
+  interpolation_config_file: budhi_gandaki_interpolation.yaml
+  start_datetime: 2010-01-01T00:00:00
+  run_time_step: 3600  # 1 hour time step
+  number_of_steps: 87600   # 10 years
+  region_model_id: 'budhi_gandaki-ptstk-tin'
+  #interpolation_id: 2   # this is optional (default 0)
+  initial_state:
+    repository:
+      class: !!python/name:shyft.hydrology.repository.generated_state_repository.GeneratedStateRepository
+      params:
+        model: !!python/name:shyft.hydrology.pt_st_k.PTSTKModel
+    tags: []
+  references:
+  - repository: !!python/name:shyft.hydrology.repository.netcdf.cf_ts_repository.CFTsRepository
+    params:
+      file: netcdf/orchestration-testdata/discharge.nc
+      var_type: discharge
+    1D_timeseries:
+    - catch_id: [10]
+      type: discharge
+      uid: Arughat
+      run_time_step: 86400 # 3600
+    
+...
