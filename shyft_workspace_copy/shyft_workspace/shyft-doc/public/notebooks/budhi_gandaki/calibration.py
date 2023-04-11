@@ -40,7 +40,7 @@ from shyft.hydrology.orchestration.simulators.config_simulator import ConfigSimu
 
 print('\nPackages sucessfully imported...\n')
 # conduct a configured simulation first.
-config_file_path = os.path.join(shyftdata_dir, f"budhi_gandaki/yaml_config/{folder_name}/budhi_gandaki_simulation.yaml")
+config_file_path = os.path.join(shyftdata_dir, f"budhi_gandaki/yaml_config-tin/{folder_name}/budhi_gandaki_simulation_tin.yaml")
 
 print('\nCreating simulation...\n')
 cfg_sim = YAMLSimConfig(config_file_path, "budhi_gandaki")
@@ -54,7 +54,7 @@ print('\nSimulation finished running\n')
 
 print('\nSetting up config\n')
 # # set up configuration using *.yaml configuration files
-config_file_path = os.path.join(shyftdata_dir,f"budhi_gandaki/yaml_config/{folder_name}/budhi_gandaki_calibration.yaml") # here is the *.yaml file
+config_file_path = os.path.join(shyftdata_dir,f"budhi_gandaki/yaml_config-tin/{folder_name}/budhi_gandaki_calibration_tin.yaml") # here is the *.yaml file
 cfg_conf = YAMLCalibConfig(config_file_path, "budhi_gandaki")
 
 print('\nConfig setup finished\n')

@@ -1,0 +1,30 @@
+# This file has been automatically generated after a calibration run
+model_parameters:
+  ae:
+    ae_scale_factor: 1.5
+  gm:
+    direct_response: 1.0
+    dtf: 5.0
+  kirchner:
+    c1: -5.821360665945107
+    c2: 0.12424461955817612
+    c3: -0.05317981949316446
+  msp:
+    reservoir_direct_response_fraction: 1.0
+  p_corr:
+    scale_factor: 0.6156131728514318
+  pt:
+    albedo: 0.2
+    alpha: 1.26
+  routing:
+    alpha: 0.9
+    beta: 3.0
+    velocity: 0.0
+  st:
+    cfr: 0.00018764433397036476
+    cx: 17.68171587180707
+    lwmax: 0.18132568059650717
+    shape: 2.0
+    ts: -2.265872520457905
+    tx: 3.999974656129748
+model_t: !!python/name:shyft.hydrology.pt_st_k._pt_st_k.PTSTKModel

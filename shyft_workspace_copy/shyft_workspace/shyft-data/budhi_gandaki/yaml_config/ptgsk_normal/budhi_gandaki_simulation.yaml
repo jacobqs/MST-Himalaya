@@ -6,7 +6,7 @@ budhi_gandaki:
   interpolation_config_file: budhi_gandaki_interpolation.yaml
   start_datetime: 2000-01-01T00:00:00
   run_time_step: 3600  # 1 hour time step
-  number_of_steps: 140231   # 15 years (amount of hours in 15 year), 8759 for hours in 1 year (except leap year)
+  number_of_steps: 96407   # 10 years (amount of hours in 10 year)
   region_model_id: 'budhi_gandaki-ptgsk'
   #interpolation_id: 2   # this is optional (default 0)
   initial_state:

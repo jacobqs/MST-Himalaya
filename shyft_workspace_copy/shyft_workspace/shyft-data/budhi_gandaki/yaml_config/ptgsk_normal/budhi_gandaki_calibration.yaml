@@ -17,7 +17,7 @@
       uid: Arughat
       start_datetime: 2000-01-01T00:00:00
       run_time_step: 3600
-      number_of_steps: 52583 # Number of hours in 5 years (including leap years)
+      number_of_steps: 52584 # Hours in 5 years including leap year
       weight: 1.0
       obj_func:
         name: NSE # Nash–Sutcliffe efficiency (NSE) or Kling–Gupta efficiency (KGE)
@@ -41,16 +41,16 @@
       max: -0.05
     ae.ae_scale_factor:
       min: 1.0
-      max: 1.0
+      max: 1.5
     gs.tx:
-      min: -3.0
-      max: 2.0
+      min: -4.0
+      max: 4.0
     gs.wind_scale:
       min: 1.0
       max: 6.0
     gs.max_water:
-      min: 0.1
-      max: 0.1
+      min: 0.0
+      max: 1.0
     gs.wind_const:
       min: 1.0
       max: 1.0
@@ -82,8 +82,8 @@
       min: 0.0
       max: 0.0
     gs.glacier_albedo:
-      min: 0.4
-      max: 0.4
+      min: 0.2
+      max: 0.6
     gs.initial_bare_ground_fraction:
       min: 0.04
       max: 0.04
