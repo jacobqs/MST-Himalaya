@@ -1,0 +1,40 @@
+---
+repository:
+  class: !!python/name:mst_himalaya.cf_region_model_repository_tin.CFRegionModelRepository
+  params:
+    data_file: tin/narayani_cid10_largest_tin.nc
+    get_model_from_tin_repo: True
+    tin_uid: ['narayani-cid-10-largest']
+    tin_data_folder: budhi_gandaki/tin_archive
+
+domain:
+  EPSG: 32645
+  nx: 75 #1077 # Only Budhi Gandaki (cid10)
+  ny: 105 #1077
+  step_x: 1000
+  step_y: 1000
+  lower_left_x: 250828 #250828
+  lower_left_y: 3100180 #3102291
+
+catchment_indices:
+  # - 1
+  # - 2
+  # - 3
+  # - 4
+  # - 5
+  # - 6
+  # - 7
+  # - 8
+  # - 9
+  - 10
+  # - 11
+  # - 12
+  # - 13
+  # - 14
+  # - 15
+
+#parameter_overrides:
+#  1228:
+#    kirchner:
+#        c1: -2.539
+...

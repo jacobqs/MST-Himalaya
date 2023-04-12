@@ -91,7 +91,7 @@ class TinSimpleViewerH5PY:
         self._cv_norm = []
         self._materials = []
 
-    def lonlat(self,xarr, yarr,projection="+proj=utm +zone=33, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs"):
+    def lonlat(self,xarr, yarr,projection="+proj=utm +zone=45, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs"):
         latlon_m = {'lat': xarr,
                     'lon': yarr}
         #myProj = Proj("+proj=utm +zone=33, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
