@@ -31,11 +31,11 @@
       model_t: !!python/name:shyft.hydrology.pt_st_k.PTSTKOptModel
   calibration_parameters:
     kirchner.c1:
-      min: -8.0 # -3.0
-      max: 0.0 # 2.0
+      min: -8.0 
+      max: 0.0 
     kirchner.c2:
-      min: -1.0 # 0.8
-      max: 1.2 # 1.2
+      min: -1.0 
+      max: 1.2 
     kirchner.c3:
       min: -0.15
       max: -0.05
@@ -58,8 +58,8 @@
       min: 0.0
       max: 1.0
     st.cfr:
-      min: 0.0 # 5.0
-      max: 1.0 # 15.0
+      min: 0.0 
+      max: 1.0 
     gm.dtf:
       min: 6
       max: 6
@@ -83,7 +83,7 @@
       max: 3.0
     gm.direct_response:
       min: 0.0
-      max: 0.0
+      max: 1.0
     msp.reservoir_direct_response_fraction:
       min: 1.0
       max: 1.0

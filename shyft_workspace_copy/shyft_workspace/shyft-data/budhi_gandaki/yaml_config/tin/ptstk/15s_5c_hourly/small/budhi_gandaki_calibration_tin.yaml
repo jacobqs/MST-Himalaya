@@ -1,0 +1,90 @@
+﻿budhi_gandaki:
+  model_config_file: budhi_gandaki_simulation_tin.yaml
+  calibrated_model_file: calibrated_model.yaml  # file where the calibrated params will go
+  optimization_method:
+    name: min_bobyqa # can be 'min_bobyqa', 'dream' or 'sceua'
+    params:
+      max_n_evaluations: 1500
+      tr_start: 0.1
+      tr_stop: 1.0e-5
+  target:
+  - repository: !!python/name:mst_himalaya.wfde5_cf_ts_repository.CFTsRepository
+    params:
+      file: netcdf/orchestration-testdata/discharge.nc
+      var_type: discharge
+    1D_timeseries:
+    - catch_id: [10]
+      uid: Arughat
+      start_datetime: 2000-01-01T00:00:00
+      run_time_step: 3600 # 3600 (seconds in 1 hour)
+      number_of_steps: 43824 # hours from Jan 1 2000 to Dec 31 2004
+      weight: 1.0
+      obj_func:
+        name: NSE # Nash–Sutcliffe efficiency (NSE) or Kling–Gupta efficiency (KGE)
+        scaling_factors:
+          s_corr: 1.0
+          s_var: 1.0
+          s_bias: 1.0
+  overrides:
+    model:
+      model_t: !!python/name:shyft.hydrology.pt_st_k.PTSTKOptModel
+  calibration_parameters:
+    kirchner.c1:
+      min: -8.0 
+      max: 0.0 
+    kirchner.c2:
+      min: -1.0 
+      max: 1.2 
+    kirchner.c3:
+      min: -0.15
+      max: -0.05
+    ae.ae_scale_factor:
+      min: 1.0
+      max: 1.0
+    st.shape:
+      min: 2.0
+      max: 2.0
+    st.tx:
+      min: -3.0
+      max: 2.0
+    st.cx:
+      min: 0.0
+      max: 30.0
+    st.ts:
+      min: -4.0
+      max: 4.0
+    st.lwmax:
+      min: 0.0
+      max: 1.0
+    st.cfr:
+      min: 0.0 
+      max: 1.0 
+    gm.dtf:
+      min: 6
+      max: 6
+    p_corr.scale_factor:
+      min: 0.4
+      max: 2.0 
+    pt.albedo:
+      min: 0.2
+      max: 0.2
+    pt.alpha:
+      min: 1.26
+      max: 1.26
+    routing.velocity:
+      min: 0
+      max: 0
+    routing.alpha:
+      min: 0.9
+      max: 0.9
+    routing.beta:
+      min: 3.0
+      max: 3.0
+    gm.direct_response:
+      min: 0.0
+      max: 1.0
+    msp.reservoir_direct_response_fraction:
+      min: 1.0
+      max: 1.0
+      min: 1.0
+      max: 1.0
