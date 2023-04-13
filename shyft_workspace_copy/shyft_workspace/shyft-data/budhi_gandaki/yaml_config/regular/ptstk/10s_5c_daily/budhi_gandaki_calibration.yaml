@@ -46,8 +46,8 @@
       min: 2.0
       max: 2.0
     st.tx:
-      min: -4.0
-      max: 4.0
+      min: -3.0
+      max: 2.0
     st.cx:
       min: 0.0
       max: 30.0
