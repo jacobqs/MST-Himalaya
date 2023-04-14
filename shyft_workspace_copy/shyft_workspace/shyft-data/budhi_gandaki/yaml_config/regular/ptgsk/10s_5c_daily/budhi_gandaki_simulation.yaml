@@ -1,7 +1,7 @@
 ---
 budhi_gandaki:
   region_config_file: budhi_gandaki_region.yaml
-  model_config_file: budhi_gandaki_model.yaml
+  model_config_file: calibrated_model.yaml #budhi_gandaki_model.yaml for initial values
   datasets_config_file: budhi_gandaki_datasets.yaml
   interpolation_config_file: budhi_gandaki_interpolation.yaml
   start_datetime: 2000-01-01T00:00:00
