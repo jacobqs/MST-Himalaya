@@ -18,10 +18,10 @@ interpolation_parameters:
   precipitation:
     method: idw
     params:
-      max_distance: 600000.0
+      max_distance: 400000.0
       max_members: 10
       distance_measure_factor: 1
-      scale_factor: 1.01
+      scale_factor: 0.93
   radiation:
     method: idw
     params:

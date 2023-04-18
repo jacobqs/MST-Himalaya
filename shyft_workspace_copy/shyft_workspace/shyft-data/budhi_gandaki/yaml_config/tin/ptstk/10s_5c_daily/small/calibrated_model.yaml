@@ -3,16 +3,16 @@ model_parameters:
   ae:
     ae_scale_factor: 1.0
   gm:
-    direct_response: 0.1341857311803839
+    direct_response: 0.49851600020154796
     dtf: 6.0
   kirchner:
-    c1: -5.8507506177440245
-    c2: 0.11463390805423623
-    c3: -0.11457962569411007
+    c1: -5.877597352150859
+    c2: 0.06877101518233775
+    c3: -0.10405479779759402
   msp:
     reservoir_direct_response_fraction: 1.0
   p_corr:
-    scale_factor: 1.1792681726296108
+    scale_factor: 1.2621807294368872
   pt:
     albedo: 0.2
     alpha: 1.26
@@ -21,10 +21,10 @@ model_parameters:
     beta: 3.0
     velocity: 0.0
   st:
-    cfr: 0.5651447768351487
-    cx: 29.995984415833792
-    lwmax: 0.48375916536213004
+    cfr: 0.25463445726855105
+    cx: 20.35258669389384
+    lwmax: 0.4798392898435437
     shape: 2.0
-    ts: -0.9942805935582189
-    tx: 0.4136356872321487
+    ts: -2.4707652236938777
+    tx: 0.6216107980063565
 model_t: !!python/name:shyft.hydrology.pt_st_k._pt_st_k.PTSTKModel
