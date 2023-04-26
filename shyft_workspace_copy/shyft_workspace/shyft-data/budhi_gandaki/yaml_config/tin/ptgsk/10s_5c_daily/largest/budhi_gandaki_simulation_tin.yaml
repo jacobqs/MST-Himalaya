@@ -1,12 +1,12 @@
 ---
 budhi_gandaki:
   region_config_file: budhi_gandaki_region_tin.yaml
-  model_config_file: budhi_gandaki_model.yaml
+  model_config_file: calibrated_model.yaml #budhi_gandaki_model.yaml
   datasets_config_file: budhi_gandaki_datasets.yaml
   interpolation_config_file: budhi_gandaki_interpolation.yaml
   start_datetime: 2000-01-01T00:00:00
   run_time_step: 3600  # hourly timestep
-  number_of_steps: 87658 # Hours from 1 jan 2000 to 31 dec 2009
+  number_of_steps: 140256 # Hours from 1 jan 2000 to 31 dec 2009
   region_model_id: 'budhi_gandaki_largest_tin_ptgsk_10s_5c_daily'
   #interpolation_id: 2   # this is optional (default 0)
   initial_state:
