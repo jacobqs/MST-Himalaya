@@ -1,0 +1,33 @@
+---
+sources:
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
+    types:
+      - precipitation
+    params:
+      filename: netcdf/orchestration-testdata/precipitation_topo.nc
+      padding: 0.0
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
+    types:
+      - temperature
+    params:
+      filename: netcdf/orchestration-testdata/temperature_topo.nc
+      padding: 0.0
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
+    types:
+      - wind_speed
+    params:
+      filename: netcdf/orchestration-testdata/wind_speed_topo.nc
+      padding: 0.0
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
+    types:
+      - relative_humidity
+    params:
+      filename: netcdf/orchestration-testdata/relative_humidity_topo.nc
+      padding: 0.0
+  - repository: !!python/name:mst_himalaya.wfde5_cf_geo_ts_repository.CFDataRepos
+    types:
+      - radiation
+    params:
+      filename: netcdf/orchestration-testdata/radiation_topo.nc
+      padding: 0.0
+...

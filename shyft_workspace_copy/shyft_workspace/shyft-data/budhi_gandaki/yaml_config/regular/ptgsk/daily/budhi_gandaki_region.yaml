@@ -1,0 +1,38 @@
+---
+repository:
+  class: !!python/name:shyft.repository.netcdf.cf_region_model_repository.CFRegionModelRepository
+  params:
+    data_file: netcdf/orchestration-testdata/cell_data.nc
+
+domain:
+  EPSG: 32645
+  nx: 38 #1077 # Only Budhi Gandaki (cid10)
+  ny: 53 #1077
+  step_x: 2000
+  step_y: 2000
+  lower_left_x: 250828 
+  lower_left_y: 3100180 
+
+catchment_indices:
+#      - 1
+#      - 2
+#      - 3
+#      - 4
+#      - 5
+#      - 6
+#      - 7
+#      - 8
+#      - 9
+     - 10
+#      - 11
+#      - 12
+#      - 13
+#      - 14
+#      - 15
+
+
+#parameter_overrides:
+#  1228:
+#    kirchner:
+#        c1: -2.539
+...

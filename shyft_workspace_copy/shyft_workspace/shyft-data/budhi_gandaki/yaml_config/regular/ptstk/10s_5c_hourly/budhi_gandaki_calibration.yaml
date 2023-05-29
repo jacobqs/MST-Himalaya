@@ -17,7 +17,7 @@
       uid: Arughat
       start_datetime: 2000-01-01T00:00:00
       run_time_step: 3600
-      number_of_steps: 43824 # Hours from Jan 1 2000 to 31 Dec 2004
+      number_of_steps: 43848 # Hours from Jan 1 2000 to 31 Dec 2004
       weight: 1.0
       obj_func:
         name: NSE # Nash–Sutcliffe efficiency (NSE) or Kling–Gupta efficiency (KGE)
