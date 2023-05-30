@@ -1,4 +1,4 @@
-# Assessing the Shyft Modelling Framework in Nepal: Impact of Snow Routines and Terrain Representation on Simulated Water Balance Components
+# Forecasting discharge for hydropower production in Central Himalaya, Nepal
 [![DOI](https://zenodo.org/badge/472295880.svg)](https://zenodo.org/badge/latestdoi/472295880)
 
 

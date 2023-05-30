@@ -1,8 +1,0 @@
-shyft
-sphinx>=4.4
-sphinx_rtd_theme
-nbsphinx
-ipython
-recommonmark
-jupyter
-bokeh

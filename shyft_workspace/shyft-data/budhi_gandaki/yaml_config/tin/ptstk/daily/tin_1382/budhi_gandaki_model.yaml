@@ -1,0 +1,30 @@
+model_t: !!python/name:shyft.hydrology.pt_st_k.PTSTKModel  # model to construct
+model_parameters:
+  ae:  # actual_evapotranspiration
+    ae_scale_factor: 1.0
+  st:  # gamma_snow
+    shape: 2.0
+    tx: -1.68
+    cx: 1.0
+    ts: 0.0
+    lwmax: 0.1
+    cfr: 0.5
+  gm:
+    dtf: 6.0
+    direct_response: 0.0
+  kirchner:
+    c1: -5.51
+    c2: 0.44
+    c3: -0.05
+  p_corr:  # precipitation_correction
+    scale_factor: 1.0
+  pt:  # priestley_taylor
+    albedo: 0.2
+    alpha: 1.26
+  routing:
+    alpha: 0.9
+    beta: 3.0
+    velocity: 0.0
+  msp:
+    reservoir_direct_response_fraction: 1.0
+
