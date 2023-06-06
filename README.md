@@ -73,7 +73,7 @@ For more information abou Shyft please see:
 
 ## Data
 
-The study use the WFDE5 global bias-adjusted ERA-5 as forcing data (Cucchi et al. 2020), and snow-covered area by MODIS (Hall, D. K. & G. A. Riggs, 2016) and observed river discharge data from the [Department of Hydrology and Meteorology in Nepal](https://www.dhm.gov.np) as evaluation. The FAIR principles will be a part of the of data handling (GO FAIR 2021). The data can be found at the [Zenodo repository](https://zenodo.org/record/7992195)).
+The study use the WFDE5 global bias-adjusted ERA-5 as forcing data (Cucchi et al. 2020), and snow-covered area by MODIS (Hall, D. K. & G. A. Riggs, 2016) and observed river discharge data from the [Department of Hydrology and Meteorology in Nepal](https://www.dhm.gov.np) as evaluation. The FAIR principles will be a part of the of data handling (GO FAIR 2021). The data can be found at the [Zenodo repository](https://zenodo.org/record/7992195).
 
 Cucchi, M., G. P. Weedon, A. Amici, N. Bellouin, S. Lange, H. Müller Schmied, H. Hersbach, and C. Buontempo (Sept. 8, 2020). “WFDE5: bias-adjusted ERA5 reanalysis data for impact studies.” In: Earth System Science Data 12.3, pp. 2097– 2120. issn: 1866-3516. doi: 10.5194/essd-12-2097-2020. url: https://essd.copernicus. org/articles/12/2097/2020/ (visited on 09/29/2022).
 
